@@ -331,9 +331,24 @@
 					<Button Font="Tahoma,12" Height="30" Id="Button0" Left="702" TabOrder="4" Text="삭제" Top="465" Width="74"></Button>
 					<Button Font="Tahoma,12" Height="30" Id="Button1" Left="612" TabOrder="5" Text="수정" Top="465" Width="74"></Button>
 					<Button Font="Tahoma,12" Height="30" Id="Button2" Left="522" OnClick="Tab0_tab1_Button2_OnClick" TabOrder="6" Text="입력" Top="465" Width="74"></Button>
-					<Combo BindDataset="ds_status" CodeColumn="code" DataColumn="value" DisplayRowCnt="3" Font="Tahoma,11" Height="27" Id="Combo0" InnerDataset="ds_status" Left="366" TabOrder="7" Top="397" Value="1" Width="60"></Combo>
+					<Combo BindDataset="ds_status" CodeColumn="code" DataColumn="value" DisplayRowCnt="3" Font="Tahoma,11" Height="27" Id="Combo0" InnerDataset="ds_status" Left="374" TabOrder="7" Top="397" Value="1" Width="60"></Combo>
 					<Shape Bottom="296" Height="38" Id="Shape0" Left="272" LineColor="SCROLLBAR" Right="766" TabOrder="9" Top="258" Width="494"></Shape>
 					<Button Font="Tahoma,12" Height="30" Id="Button3" Left="434" TabOrder="10" Text="조회" Top="465" Width="74"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button01" Left="280" TabOrder="2" Text="프로젝트명" Top="128" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button21" Left="280" TabOrder="6" Text="일정(계획)" Top="180" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button31" Left="280" OnClick="Button31_OnClick" TabOrder="9" Text="일정(실제)" Top="232" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button41" Left="280" OnClick="Button11_OnClick" TabOrder="12" Text="계약금액" Top="300" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button51" Left="280" OnClick="Button11_OnClick" TabOrder="14" Text="계약처" Top="348" Width="93"></Button>
+					<Edit Font="Tahoma,11" Height="27" Id="Edit3" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="15" Top="348" Width="188"></Edit>
+					<Edit Font="Tahoma,11" Height="27" Id="Edit2" Left="372" MaxLength="10" Readonly="TRUE" TabOrder="13" Top="300" Width="188"></Edit>
+					<Calendar Font="Tahoma,11" Height="27" Id="Calendar21" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="10" Top="232" Width="126"></Calendar>
+					<Calendar Font="Tahoma,11" Height="27" Id="Calendar31" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="11" Top="232" Width="126"></Calendar>
+					<Calendar Font="Tahoma,11" Height="27" Id="Calendar11" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="8" Top="180" Width="126"></Calendar>
+					<Calendar Font="Tahoma,11" Height="27" Id="Calendar01" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="7" Top="180" Width="126"></Calendar>
+					<Edit AutoSelect="TRUE" Font="Tahoma,11" Height="27" Id="Edit0" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="3" Top="128" Width="192"></Edit>
+					<Edit Font="Tahoma,11" Height="27" Id="Edit1" Left="656" MaxLength="6" Readonly="TRUE" TabOrder="5" Top="128" Width="100"></Edit>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button11" Left="564" OnClick="Button11_OnClick" TabOrder="4" Text="P&#32;M" Top="128" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button61" Left="280" OnClick="Button11_OnClick" TabOrder="16" Text="계약상태" Top="396" Width="93"></Button>
 				</TabPage>
 				<TabPage Height="515" Id="tab2" Left="2" TabOrder="4" Text="원가관리" Top="23" Width="788"></TabPage>
 				<TabPage Height="515" Id="tab3" Left="2" TabOrder="4" Text="현황분석" Top="23" Width="788"></TabPage>
@@ -343,21 +358,6 @@
 				</TabPage>
 			</Contents>
 		</Tab>
-		<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button0" Left="280" TabOrder="2" Text="프로젝트명" Top="148" Width="93"></Button>
-		<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button2" Left="280" TabOrder="6" Text="일정(계획)" Top="200" Width="93"></Button>
-		<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button3" Left="280" OnClick="Button3_OnClick" TabOrder="9" Text="일정(실제)" Top="252" Width="93"></Button>
-		<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button4" Left="280" OnClick="Button1_OnClick" TabOrder="12" Text="계약금액" Top="324" Width="93"></Button>
-		<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button5" Left="280" OnClick="Button1_OnClick" TabOrder="14" Text="계약처" Top="372" Width="93"></Button>
-		<Edit Font="Tahoma,11" Height="27" Id="Edit3" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="15" Top="372" Width="188"></Edit>
-		<Edit Font="Tahoma,11" Height="27" Id="Edit2" Left="372" MaxLength="10" Readonly="TRUE" TabOrder="13" Top="324" Width="188"></Edit>
-		<Calendar Font="Tahoma,11" Height="27" Id="Calendar2" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="10" Top="252" Width="126"></Calendar>
-		<Calendar Font="Tahoma,11" Height="27" Id="Calendar3" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="11" Top="252" Width="126"></Calendar>
-		<Calendar Font="Tahoma,11" Height="27" Id="Calendar1" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="8" Top="200" Width="126"></Calendar>
-		<Calendar Font="Tahoma,11" Height="27" Id="Calendar0" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="7" Top="200" Width="126"></Calendar>
-		<Edit AutoSelect="TRUE" Font="Tahoma,11" Height="27" Id="Edit0" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="3" Top="148" Width="192"></Edit>
-		<Edit Font="Tahoma,11" Height="27" Id="Edit1" Left="656" MaxLength="6" Readonly="TRUE" TabOrder="5" Top="148" Width="100"></Edit>
-		<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button1" Left="564" OnClick="Button1_OnClick" TabOrder="4" Text="P&#32;M" Top="148" Width="93"></Button>
-		<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button6" Left="280" OnClick="Button1_OnClick" TabOrder="16" Text="계약상태" Top="420" Width="93"></Button>
 	</Form>
 	<Script><![CDATA[
 
