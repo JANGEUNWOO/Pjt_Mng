@@ -1,357 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window>
-	<Form Height="543" Id="cost_Mng" Left="8" PidAttrib="7" Title="프로젝트&#32;관리&#32;프로그램" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
+	<Form Height="543" Id="cost_Mng" Left="8" PidAttrib="7" Title="New&#32;Form" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
 		<Datasets>
-			<Dataset DataSetType="Dataset" Id="ds_pjt_mng">
+			<Dataset DataSetType="Dataset" Id="ds_member">
 				<Contents>
-					<colinfo id="프로젝트ID" size="6" summ="default" type="STRING"/>
-					<colinfo id="프로젝트명" size="12" summ="default" type="STRING"/>
-					<colinfo id="PM" size="12" summ="default" type="STRING"/>
-					<colinfo id="계획시작일" size="8" summ="default" type="STRING"/>
-					<colinfo id="계획종료일" size="8" summ="default" type="STRING"/>
-					<colinfo id="실제시작일" size="8" summ="default" type="STRING"/>
-					<colinfo id="실제종료일" size="8" summ="default" type="STRING"/>
-					<colinfo id="계약금액" size="10" summ="default" type="STRING"/>
-					<colinfo id="계약처" size="12" summ="default" type="STRING"/>
-					<colinfo id="계약상태" size="6" summ="default" type="STRING"/>
-					<colinfo id="column0" size="256" summ="default" type="STRING"/>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
+					<column id="Const0" type="STRING"></column>
 				</Contents>
 			</Dataset>
-			<Dataset DataSetType="Dataset" Id="ds_status">
+			<Dataset DataSetType="Dataset" Id="ds_etcCost">
 				<Contents>
-					<colinfo id="code" size="256" summ="default" type="STRING"/>
-					<colinfo id="value" size="256" summ="default" type="STRING"/>
+					<column id="Const0" type="STRING"></column>
+					<column id="Const1" type="STRING"></column>
+					<column id="Const2" type="STRING"></column>
+					<column id="Const3" type="STRING"></column>
+					<colinfo id="projectname" MapValue="프로젝트명" size="256" summ="default" type="STRING"/>
+					<colinfo id="type" MapValue="항목" size="256" summ="default" type="STRING"/>
+					<colinfo id="cost" MapValue="금액" size="256" summ="default" type="STRING"/>
+					<colinfo id="etc" MapValue="비고" size="256" summ="default" type="STRING"/>
 					<record>
-						<code>1</code>
-						<value>계획</value>
+						<cost></cost>
+						<etc></etc>
+						<projectname></projectname>
+						<type></type>
 					</record>
 					<record>
-						<code>2</code>
-						<value>진행</value>
+						<cost></cost>
+						<etc></etc>
+						<projectname></projectname>
+						<type></type>
 					</record>
 					<record>
-						<code>3</code>
-						<value>종료</value>
+						<cost></cost>
+						<etc></etc>
+						<projectname></projectname>
+						<type></type>
 					</record>
-				</Contents>
-			</Dataset>
-			<Dataset DataSetType="Dataset" Id="ds_voInfo">
-				<Contents>
-					<colinfo id="voClass" size="256" summ="default" type="STRING"/>
 				</Contents>
 			</Dataset>
 		</Datasets>
-		<Tab Height="540" Id="Tab0" Left="4" TabOrder="1" Width="792">
+		<Tab Height="540" Id="Tab0" Left="4" TabIndex="1" TabOrder="1" Width="792">
 			<Contents>
 				<TabPage BorderColor="black" Height="515" Id="tab1" Left="2" TabOrder="4" Text="프로젝트&#32;관리" Top="23" Width="788">
-					<Static Border="Flat" BorderColor="SCROLLBAR" Height="344" Id="Static0" Left="262" TabOrder="8" Top="105" Width="512"></Static>
 					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
 					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="221" TabOrder="2" Text="프로젝트&#32;관리" Top="23" VAlign="Middle" Width="330"></Static>
-					<Grid BindDataset="ds_pjt_mng" BkColor2="default" BoldHead="true" Bottom="497" Enable="true" EndLineColor="default" Height="396" Id="Grid0" InputPanel="FALSE" Left="6" LineColor="default" Right="234" TabOrder="3" TabStop="true" Top="101" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="228">
+					<Grid BkColor2="default" BoldHead="true" Bottom="459" Enable="true" EndLineColor="default" Height="362" Id="Grid0" InputPanel="FALSE" Left="6" LineColor="default" Right="780" TabOrder="3" TabStop="true" Top="97" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="774">
 						<contents>
 							<format id="Default">
 								<columns>
-									<col width="56"/>
+									<col width="74"/>
 									<col width="126"/>
-									<col width="42"/>
+									<col width="53"/>
+									<col width="133"/>
+									<col width="110"/>
+									<col width="121"/>
+									<col width="99"/>
+									<col width="54"/>
 								</columns>
 								<head>
 									<cell col="0" combodisplayrowcnt="6" display="text" edit="normal" font="Tahoma,11" text="ID"/>
 									<cell col="1" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="프로젝트명"/>
 									<cell col="2" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="PM"/>
+									<cell col="3" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="계획일정"/>
+									<cell col="4" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="실제일정"/>
+									<cell col="5" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="계약금액"/>
+									<cell col="6" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="계약처"/>
+									<cell col="7" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="상태"/>
 								</head>
 								<body>
 									<cell col="0" display="text"/>
 									<cell col="1" display="text"/>
 									<cell col="2" display="text"/>
+									<cell col="3" display="text"/>
+									<cell col="4" display="text"/>
+									<cell col="5" display="text"/>
+									<cell col="6" display="text"/>
+									<cell col="7" display="text"/>
 								</body>
 							</format>
 						</contents>
 					</Grid>
-					<Button Font="Tahoma,12" Height="30" Id="Button0" Left="702" TabOrder="4" Text="삭제" Top="465" Width="74"></Button>
-					<Button Font="Tahoma,12" Height="30" Id="Button1" Left="612" TabOrder="5" Text="수정" Top="465" Width="74"></Button>
-					<Button Font="Tahoma,12" Height="30" Id="Button2" Left="522" OnClick="Tab0_tab1_Button2_OnClick" TabOrder="6" Text="입력" Top="465" Width="74"></Button>
-					<Combo BindDataset="ds_status" CodeColumn="code" DataColumn="value" DisplayRowCnt="3" Font="Tahoma,11" Height="27" Id="Combo0" InnerDataset="ds_status" Left="374" TabOrder="7" Top="397" Value="1" Width="60"></Combo>
-					<Shape Bottom="296" Height="38" Id="Shape0" Left="272" LineColor="SCROLLBAR" Right="766" TabOrder="9" Top="258" Width="494"></Shape>
-					<Button Font="Tahoma,12" Height="30" Id="Button3" Left="434" TabOrder="10" Text="조회" Top="465" Width="74"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button01" Left="280" TabOrder="2" Text="프로젝트명" Top="128" Width="93"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button21" Left="280" TabOrder="6" Text="일정(계획)" Top="180" Width="93"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button31" Left="280" OnClick="Button31_OnClick" TabOrder="9" Text="일정(실제)" Top="232" Width="93"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button41" Left="280" OnClick="Button11_OnClick" TabOrder="12" Text="계약금액" Top="300" Width="93"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button51" Left="280" OnClick="Button11_OnClick" TabOrder="14" Text="계약처" Top="348" Width="93"></Button>
-					<Edit Font="Tahoma,11" Height="27" Id="Edit3" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="15" Top="348" Width="188"></Edit>
-					<Edit Font="Tahoma,11" Height="27" Id="Edit2" Left="372" MaxLength="10" Readonly="TRUE" TabOrder="13" Top="300" Width="188"></Edit>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar21" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="10" Top="232" Width="126"></Calendar>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar31" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="11" Top="232" Width="126"></Calendar>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar11" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="8" Top="180" Width="126"></Calendar>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar01" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="7" Top="180" Width="126"></Calendar>
-					<Edit AutoSelect="TRUE" Font="Tahoma,11" Height="27" Id="Edit0" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="3" Top="128" Width="192"></Edit>
-					<Edit Font="Tahoma,11" Height="27" Id="Edit1" Left="656" MaxLength="6" Readonly="TRUE" TabOrder="5" Top="128" Width="100"></Edit>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button11" Left="564" OnClick="Button11_OnClick" TabOrder="4" Text="P&#32;M" Top="128" Width="93"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button61" Left="280" OnClick="Button11_OnClick" TabOrder="16" Text="계약상태" Top="396" Width="93"></Button>
+					<Button Font="Tahoma,12" Height="30" Id="Button0" Left="702" TabOrder="4" Text="삭제" Top="469" Width="74"></Button>
+					<Button Font="Tahoma,12" Height="30" Id="Button1" Left="612" TabOrder="5" Text="수정" Top="469" Width="74"></Button>
+					<Button Font="Tahoma,12" Height="30" Id="Button2" Left="522" TabOrder="6" Text="입력" Top="469" Width="74"></Button>
 				</TabPage>
-				<TabPage Height="515" Id="tab2" Left="2" TabOrder="4" Text="원가관리" Top="23" Width="788"></TabPage>
-				<TabPage Height="515" Id="tab3" Left="2" TabOrder="4" Text="현황분석" Top="23" Width="788"></TabPage>
+				<TabPage BorderColor="black" Height="515" Id="tab2" Left="2" TabOrder="4" Text="원가관리" Top="23" Width="788">
+					<Tab Height="444" Id="Tab0" Left="-2" TabIndex="2" TabOrder="1" Top="73" Width="792">
+						<Contents>
+							<TabPage BorderColor="black" Height="419" Id="tab1" Left="2" TabOrder="1" Text="노무비" Top="23" Width="788">
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static0" Left="50" TabOrder="1" Text="프로젝트명" Top="33" VAlign="Middle" Width="92"></Static>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static1" Left="50" TabOrder="2" Text="이름" Top="73" VAlign="Middle" Width="92"></Static>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static2" Left="50" TabOrder="3" Text="시작일" Top="113" VAlign="Middle" Width="92"></Static>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static3" Left="50" TabOrder="4" Text="종료일" Top="153" VAlign="Middle" Width="92"></Static>
+								<Edit Height="24" Id="Edit0" Left="162" TabOrder="5" Top="29" Width="119"></Edit>
+								<Edit Height="24" Id="Edit1" Left="162" TabOrder="6" Top="65" Width="119"></Edit>
+								<Edit Height="24" Id="Edit2" Left="162" TabOrder="7" Top="109" Width="119"></Edit>
+								<Edit Height="24" Id="Edit3" Left="162" TabOrder="8" Top="153" Width="119"></Edit>
+								<Grid BindDataset="dy_member" BkColor2="default" BoldHead="true" Bottom="344" Enable="true" EndLineColor="default" Height="144" Id="Gr_memberCost" InputPanel="FALSE" Left="47" LineColor="default" Right="731" TabOrder="9" TabStop="true" Top="200" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="684">
+									<contents>
+										<format id="Default">
+											<columns>
+												<col width="100"/>
+												<col width="80"/>
+												<col width="120"/>
+												<col width="120"/>
+												<col width="120"/>
+												<col width="140"/>
+											</columns>
+											<head>
+												<cell col="0" display="text" text="프로젝트명"/>
+												<cell col="1" display="text" text="이름"/>
+												<cell col="2" display="text" text="시작일"/>
+												<cell col="3" display="text" text="종료일"/>
+												<cell col="4" display="text" text="인건비"/>
+												<cell col="5" display="text" text="비고"/>
+											</head>
+											<body>
+												<cell col="0" display="text"/>
+												<cell col="1" display="text"/>
+												<cell col="2" display="text"/>
+												<cell col="3" display="text"/>
+												<cell col="4" display="text"/>
+												<cell col="5" display="text"/>
+											</body>
+										</format>
+									</contents>
+								</Grid>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static4" Left="290" TabOrder="10" Text="비고" Top="29" VAlign="Middle" Width="92"></Static>
+								<Edit Height="22" Id="Edit4" Left="394" TabOrder="11" Top="25" Width="122"></Edit>
+								<Button Height="28" Id="Button0" Left="554" OnClick="Tab0_tab2_Tab0_tab1_Button0_OnClick" TabOrder="12" Text="추가" Top="161" Width="85"></Button>
+								<Button Height="27" Id="Button1" Left="654" TabOrder="13" Text="삭제" Top="161" Width="80"></Button>
+								<Static Align="Center" BKColor="aqua" Height="19" Id="Static5" Left="329" TabOrder="14" Text="노무비" VAlign="Middle" Width="105"></Static>
+							</TabPage>
+							<TabPage BorderColor="black" Height="419" Id="tab2" Left="2" TabOrder="1" Text="재료비" Top="23" Width="788">
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static0" Left="54" TabOrder="1" Text="프로젝트명" Top="37" VAlign="Middle" Width="92"></Static>
+								<Edit Height="24" Id="Edit0" Left="166" TabOrder="5" Top="33" Width="119"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static1" Left="54" TabOrder="2" Text="항목" Top="77" VAlign="Middle" Width="92"></Static>
+								<Edit Height="24" Id="Edit1" Left="166" TabOrder="6" Top="69" Width="119"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static2" Left="54" TabOrder="3" Text="금액" Top="117" VAlign="Middle" Width="92"></Static>
+								<Edit Height="24" Id="Edit2" Left="166" TabOrder="7" Top="113" Width="119"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static3" Left="54" TabOrder="4" Text="비고" Top="157" VAlign="Middle" Width="92"></Static>
+								<Edit Height="24" Id="Edit3" Left="166" TabOrder="8" Top="157" Width="119"></Edit>
+								<Button Height="28" Id="Button0" Left="558" TabOrder="10" Text="추가" Top="165" Width="85"></Button>
+								<Button Height="27" Id="Button1" Left="658" OnClick="Tab0_tab2_Tab0_tab2_Button1_OnClick" TabOrder="11" Text="삭제" Top="165" Width="80"></Button>
+								<Grid BoldHead="true" Bottom="348" Enable="true" EndLineColor="default" Height="144" Id="Grid0" InputPanel="FALSE" Left="51" LineColor="default" Right="735" TabOrder="9" TabStop="true" Top="204" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="684">
+									<contents>
+										<format id="Default">
+											<columns>
+												<col width="140"/>
+												<col width="149"/>
+												<col width="160"/>
+												<col width="230"/>
+											</columns>
+											<head>
+												<cell col="0" display="text" text="프로젝트명"/>
+												<cell col="1" display="text" text="항목"/>
+												<cell col="2" display="text" text="금액"/>
+												<cell col="3" display="text" text="비고"/>
+											</head>
+											<body>
+												<cell col="0" display="text"/>
+												<cell col="1" display="text"/>
+												<cell col="2" display="text"/>
+												<cell col="3" display="text"/>
+											</body>
+										</format>
+									</contents>
+								</Grid>
+								<Static Align="Center" BKColor="aqua" Height="19" Id="Static5" Left="333" TabOrder="12" Text="재료비" Top="4" VAlign="Middle" Width="105"></Static>
+							</TabPage>
+							<TabPage BorderColor="black" Height="419" Id="tab3" Left="2" TabOrder="1" Text="경비" Top="23" Width="788">
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static0" Left="58" TabOrder="1" Text="프로젝트명" Top="41" VAlign="Middle" Width="92"></Static>
+								<Edit BindDataset="ds_etcCost" Column="projectname" Height="24" Id="ed_kb_prjnm" Left="170" TabOrder="5" Top="41" Width="119"></Edit>
+								<Edit BindDataset="ds_etcCost" Column="type" Height="24" Id="ed_kb_hangmok" Left="170" TabOrder="6" Top="81" Width="119"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static1" Left="58" TabOrder="2" Text="항목" Top="81" VAlign="Middle" Width="92"></Static>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static2" Left="58" TabOrder="3" Text="금액" Top="121" VAlign="Middle" Width="92"></Static>
+								<Edit BindDataset="ds_etcCost" Column="cost" Height="24" Id="ed_kb_cost" Left="170" TabOrder="7" Top="117" Width="119"></Edit>
+								<Edit BindDataset="ds_etcCost" Column="etc" Height="40" Id="ed_kb_etc" Left="170" TabOrder="8" Top="161" Width="320"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static3" Left="58" TabOrder="4" Text="비고" Top="161" VAlign="Middle" Width="92"></Static>
+								<Button Height="28" Id="bt_kb_add" Left="498" OnClick="Tab0_tab2_Tab0_tab3_bt_kb_add_OnClick" TabOrder="9" Text="추가" Top="177" Width="85"></Button>
+								<Button Height="27" Id="bt_kb_del" Left="590" OnClick="Tab0_tab2_Tab0_tab3_Button1_OnClick" TabOrder="10" Text="삭제" Top="177" Width="80"></Button>
+								<Static Align="Center" BKColor="aqua" Height="19" Id="Static5" Left="337" TabOrder="11" Text="경비" Top="8" VAlign="Middle" Width="105"></Static>
+								<Grid BindDataset="ds_etcCost" BkColor2="default" BoldHead="true" Bottom="331" Enable="true" EndLineColor="default" Height="106" Id="Grid0" InputPanel="FALSE" Left="58" LineColor="default" Right="746" TabOrder="12" TabStop="true" Top="225" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="688">
+									<contents>
+										<format id="Default">
+											<columns>
+												<col width="140"/>
+												<col width="124"/>
+												<col width="152"/>
+												<col width="267"/>
+											</columns>
+											<head>
+												<cell col="0" display="text" text="projectname"/>
+												<cell col="1" display="text" text="type"/>
+												<cell col="2" display="text" text="cost"/>
+												<cell col="3" display="text" text="etc"/>
+											</head>
+											<body>
+												<cell col="0" colid="projectname" display="text"/>
+												<cell col="1" colid="type" display="text"/>
+												<cell col="2" colid="cost" display="text"/>
+												<cell col="3" colid="etc" display="text"/>
+											</body>
+										</format>
+									</contents>
+								</Grid>
+								<Button Height="27" Id="bt_kb_save" Left="678" OnClick="Tab0_tab2_Tab0_tab3_bt_kb_save_OnClick" TabOrder="13" Text="저장" Top="177" Width="80"></Button>
+							</TabPage>
+						</Contents>
+					</Tab>
+					<Static Align="Center" Font="Tahoma,22" Height="33" Id="Static0" Left="307" TabOrder="2" Text="원가관리" Top="16" VAlign="Middle" Width="158"></Static>
+				</TabPage>
+				<TabPage BorderColor="black" Height="515" Id="tab3" Left="2" TabOrder="4" Text="현황분석" Top="23" Width="788">
+					<Static BKColor="floralwhite" Height="516" Id="Static0" Left="-6" TabOrder="2" Top="5" Width="792"></Static>
+					<Static Align="Center" BKColor="ACTIVECAPTION" Height="26" Id="Static1" Left="222" TabOrder="3" Text="매출액" Top="117" VAlign="Middle" Width="69"></Static>
+					<Static Align="Center" BKColor="ACTIVECAPTION" Height="26" Id="Static2" Left="222" TabOrder="4" Text="매출이익" Top="261" VAlign="Middle" Width="69"></Static>
+					<Static Align="Center" BKColor="ACTIVECAPTION" Height="26" Id="Static3" Left="222" TabOrder="5" Text="순이익" Top="437" VAlign="Middle" Width="69"></Static>
+					<Static Align="Center" BKColor="ACTIVECAPTION" Height="26" Id="Static4" Left="222" TabOrder="6" Text="영업이익" Top="361" VAlign="Middle" Width="69"></Static>
+					<Static Align="Center" Height="16" Id="Static5" Left="222" TabOrder="7" Text="인건비" Top="161" VAlign="Middle" Width="68"></Static>
+					<Static Align="Center" Height="16" Id="Static6" Left="222" TabOrder="8" Text="재료비" Top="193" VAlign="Middle" Width="68"></Static>
+					<Static Align="Center" Height="16" Id="Static7" Left="222" TabOrder="9" Text="경비" Top="225" VAlign="Middle" Width="68"></Static>
+					<TextArea Height="25" Id="TextArea0" Left="322" TabOrder="10" Top="117" Width="193"></TextArea>
+					<Static Align="Center" Height="16" Id="Static8" Left="222" TabOrder="11" Text="본부공통비" Top="301" VAlign="Middle" Width="68"></Static>
+					<Static Align="Center" Height="16" Id="Static9" Left="222" TabOrder="12" Text="팀공통비" Top="333" VAlign="Middle" Width="68"></Static>
+					<Static Align="Center" Height="16" Id="Static10" Left="222" TabOrder="13" Text="판공비" Top="401" VAlign="Middle" Width="68"></Static>
+					<TextArea Height="25" Id="TextArea1" Left="322" TabOrder="14" Top="157" Width="193"></TextArea>
+					<TextArea Height="25" Id="TextArea2" Left="322" TabOrder="15" Top="189" Width="193"></TextArea>
+					<TextArea Height="25" Id="TextArea3" Left="322" TabOrder="16" Top="225" Width="193"></TextArea>
+					<TextArea Height="25" Id="TextArea4" Left="322" TabOrder="17" Top="261" Width="193"></TextArea>
+					<TextArea Height="25" Id="TextArea6" Left="322" TabOrder="18" Top="329" Width="193"></TextArea>
+					<TextArea Height="25" Id="TextArea7" Left="322" TabOrder="19" Top="361" Width="193"></TextArea>
+					<TextArea Height="25" Id="TextArea8" Left="322" TabOrder="20" Top="397" Width="193"></TextArea>
+					<TextArea Height="25" Id="TextArea9" Left="322" TabOrder="21" Top="437" Width="193"></TextArea>
+					<Static Align="Center" Font="돋움체,18,Bold" Height="40" Id="Static11" Left="224" TabOrder="22" Text="현황분석" Top="30" VAlign="Middle" Width="353"></Static>
+					<TextArea Height="25" Id="TextArea5" Left="322" TabOrder="24" Top="297" Width="193"></TextArea>
+				</TabPage>
 				<TabPage BorderColor="black" Height="515" Id="tab4" Left="2" TabOrder="4" Text="매출관리" Top="23" Width="788">
 					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
 					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="225" TabOrder="2" Text="매출관리" Top="27" VAlign="Middle" Width="330"></Static>
@@ -360,52 +242,32 @@
 		</Tab>
 	</Form>
 	<Script><![CDATA[
-
-function fnSetVoInfo(objFrm, strVoClass)
+function Tab0_tab2_Tab0_tab3_bt_kb_save_OnClick(obj)
 {
-	objFrm.ds_voInfo.clearData();
-	var row = objFrm.ds_voInfo.addrow();
-	objFrm.ds_voInfo.setcolumn(row, "voClass", strVoClass);
-}
-
-
-function fnCmTr(objFrm, svcid, strController, strVoClass, inputDs, outputDs, params, callbackFnc)
-{
-
-	fnSetVoInfo(objFrm, strVoClass);
-
-	//strParam = "voClass='egovframework.rte.sample.service.SampleVO'";
+	var strSvcid = "insert";
+	var strController = "egovSampleInsert.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_board:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
 	
-	transaction(svcid, 
-				"svc::" + strController, 
-				"ds_voInfo=ds_voInfo " + inputDs, 
-				outputDs,
-				params,
-				"fnCallback");
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+			
+	//strParam = "voClass='egovframework.rte.sample.service.SampleVO'";
+	//transaction("insert", "http://127.0.0.1:8080/egovframework-basicsample-web/miplatform/egovSampleInsert.do", "ds_input=ds_board:U", "", strParam, "fnCallback");
 }
 
-function fnCallback(svcid, errcd, errmsg)
+function Tab0_tab2_Tab0_tab3_Button1_OnClick(obj)
 {
-	if ( svcid == "list" )
-	{
-		this.status = "  처리메세지 : " + errmsg;
-	}
-}
-
-
-function Tab0_tab1_Button2_OnClick(obj)
-{
-	var ret = Dialog("DefApp::prt_cost_mng_insert.xml", "", 616, 320, "Autosize=false resize=false");
-	if ( ret == "0" )
-	{
-		//Button0.Click(); 어떤 기능을 하는지 아직 확인하지 못함
-	}
-}
-
-
-function Tab0_tab1_Button3_OnClick(obj)
-{
-	transaction("list", "http://127.0.0.1:8080/miplatform/prtMngList.do", "", "ds_list=ds_output", "", "fnCallback");
+	alert('삭제 하실껀가요?? 레알마드리드??');
 }
 ]]></Script>
 </Window>
