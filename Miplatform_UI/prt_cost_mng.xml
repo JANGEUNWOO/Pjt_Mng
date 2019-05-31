@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window>
+<<<<<<< HEAD
 	<Form Height="543" Id="cost_Mng" Left="8" OnLoadCompleted="form_OnLoadCompleted" PidAttrib="7" Title="프로젝트&#32;관리&#32;프로그램" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
 		<Datasets>
 			<Dataset DataSetType="Dataset" Id="ds_status">
@@ -39,10 +40,50 @@
 					<colinfo id="custStatus" size="6" summ="default" type="STRING"/>
 				</Contents>
 			</Dataset>
+=======
+	<Form Height="543" Id="cost_Mng" Left="8" PidAttrib="7" Title="New&#32;Form" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
+		<Datasets>
+			<Dataset DataSetType="Dataset" Id="ds_member">
+				<Contents>
+					<column id="Const0" type="STRING"></column>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_etcCost">
+				<Contents>
+					<column id="Const0" type="STRING"></column>
+					<column id="Const1" type="STRING"></column>
+					<column id="Const2" type="STRING"></column>
+					<column id="Const3" type="STRING"></column>
+					<colinfo id="projectname" MapValue="프로젝트명" size="256" summ="default" type="STRING"/>
+					<colinfo id="type" MapValue="항목" size="256" summ="default" type="STRING"/>
+					<colinfo id="cost" MapValue="금액" size="256" summ="default" type="STRING"/>
+					<colinfo id="etc" MapValue="비고" size="256" summ="default" type="STRING"/>
+					<record>
+						<cost></cost>
+						<etc></etc>
+						<projectname></projectname>
+						<type></type>
+					</record>
+					<record>
+						<cost></cost>
+						<etc></etc>
+						<projectname></projectname>
+						<type></type>
+					</record>
+					<record>
+						<cost></cost>
+						<etc></etc>
+						<projectname></projectname>
+						<type></type>
+					</record>
+				</Contents>
+			</Dataset>
+>>>>>>> 65b30dcfe88f893a54b0c6acee8ef034b599b614
 		</Datasets>
-		<Tab Height="540" Id="Tab0" Left="4" TabOrder="1" Width="792">
+		<Tab Height="540" Id="Tab0" Left="4" TabIndex="1" TabOrder="1" Width="792">
 			<Contents>
 				<TabPage BorderColor="black" Height="515" Id="tab1" Left="2" TabOrder="4" Text="프로젝트&#32;관리" Top="23" Width="788">
+<<<<<<< HEAD
 					<Static Border="Flat" BorderColor="SCROLLBAR" Height="344" Id="Static0" Left="266" TabOrder="8" Top="105" Width="512"></Static>
 					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
 					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="221" TabOrder="2" Text="프로젝트&#32;관리" Top="23" VAlign="Middle" Width="330"></Static>
@@ -66,10 +107,14 @@
 									<cell align="center" col="1" colid="pjNm" display="text" font="Tahoma,11"/>
 									<cell align="center" col="2" colid="pmNm" display="text" font="Tahoma,11"/>
 									<cell align="center" col="3" colid="custStatus" display="text" font="Tahoma,11"/>
+=======
+
+>>>>>>> 65b30dcfe88f893a54b0c6acee8ef034b599b614
 								</body>
 							</format>
 						</contents>
 					</Grid>
+<<<<<<< HEAD
 					<Button Font="Tahoma,12" Height="30" Id="Button0" Left="702" OnClick="Tab0_tab1_Button0_OnClick" TabOrder="4" Text="삭제" Top="465" Width="74"></Button>
 					<Button Font="Tahoma,12" Height="30" Id="Button1" Left="612" OnClick="Tab0_tab1_Button1_OnClick" TabOrder="5" Text="수정" Top="465" Width="74"></Button>
 					<Button Font="Tahoma,12" Height="30" Id="Button2" Left="522" OnClick="Tab0_tab1_Button2_OnClick" TabOrder="6" Text="입력" Top="465" Width="74"></Button>
@@ -93,9 +138,10 @@
 					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button11" Left="564" OnClick="Button11_OnClick" TabOrder="4" Text="P&#32;M" Top="156" Width="93"></Button>
 					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button61" Left="280" OnClick="Button11_OnClick" TabOrder="16" Text="계약상태" Top="396" Width="93"></Button>
 					<Edit BindDataset="ds_pjt_list" Column="custNm" Font="Tahoma,11" Height="27" Id="Edit4" Left="370" MaxLength="6" TabOrder="27" Top="349" Width="188"></Edit>
+=======
+
+>>>>>>> 65b30dcfe88f893a54b0c6acee8ef034b599b614
 				</TabPage>
-				<TabPage Height="515" Id="tab2" Left="2" TabOrder="4" Text="원가관리" Top="23" Width="788"></TabPage>
-				<TabPage Height="515" Id="tab3" Left="2" TabOrder="4" Text="현황분석" Top="23" Width="788"></TabPage>
 				<TabPage BorderColor="black" Height="515" Id="tab4" Left="2" TabOrder="4" Text="매출관리" Top="23" Width="788">
 					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
 					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="225" TabOrder="2" Text="매출관리" Top="27" VAlign="Middle" Width="330"></Static>
@@ -103,6 +149,7 @@
 			</Contents>
 		</Tab>
 	</Form>
+<<<<<<< HEAD
 	<Script><![CDATA[function form_OnLoadCompleted(obj)
 {
 	Tab0_tab1_Button3_OnClick(obj);
@@ -195,6 +242,35 @@ function Tab0_tab1_Button1_OnClick(obj)
 		} else {
 			Tab0_tab1_Button3_OnClick(obj);
 		}
+=======
+	<Script><![CDATA[
+function Tab0_tab2_Tab0_tab3_bt_kb_save_OnClick(obj)
+{
+	var strSvcid = "insert";
+	var strController = "egovSampleInsert.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_board:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+			
+	//strParam = "voClass='egovframework.rte.sample.service.SampleVO'";
+	//transaction("insert", "http://127.0.0.1:8080/egovframework-basicsample-web/miplatform/egovSampleInsert.do", "ds_input=ds_board:U", "", strParam, "fnCallback");
+}
+
+function Tab0_tab2_Tab0_tab3_Button1_OnClick(obj)
+{
+	alert('삭제 하실껀가요?? 레알마드리드??');
+>>>>>>> 65b30dcfe88f893a54b0c6acee8ef034b599b614
 }
 ]]></Script>
 </Window>
