@@ -1,297 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window>
-	<Form Height="543" Id="cost_Mng" Left="8" PidAttrib="7" Title="프로젝트&#32;관리&#32;프로그램" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
+	<Form Height="543" Id="cost_Mng" Left="8" OnLoadCompleted="form_OnLoadCompleted" PidAttrib="7" Title="프로젝트&#32;관리&#32;프로그램" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
 		<Datasets>
-			<Dataset DataSetType="Dataset" Id="ds_pjt_mng">
-				<Contents>
-					<colinfo id="프로젝트ID" size="6" summ="default" type="STRING"/>
-					<colinfo id="프로젝트명" size="12" summ="default" type="STRING"/>
-					<colinfo id="PM" size="12" summ="default" type="STRING"/>
-					<colinfo id="계획시작일" size="8" summ="default" type="STRING"/>
-					<colinfo id="계획종료일" size="8" summ="default" type="STRING"/>
-					<colinfo id="실제시작일" size="8" summ="default" type="STRING"/>
-					<colinfo id="실제종료일" size="8" summ="default" type="STRING"/>
-					<colinfo id="계약금액" size="10" summ="default" type="STRING"/>
-					<colinfo id="계약처" size="12" summ="default" type="STRING"/>
-					<colinfo id="계약상태" size="6" summ="default" type="STRING"/>
-					<colinfo id="column0" size="256" summ="default" type="STRING"/>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-					<record>
-						<column0></column0>
-						<PM></PM>
-						<계약금액></계약금액>
-						<계약상태></계약상태>
-						<계약처></계약처>
-						<계획시작일></계획시작일>
-						<계획종료일></계획종료일>
-						<실제시작일></실제시작일>
-						<실제종료일></실제종료일>
-						<프로젝트ID></프로젝트ID>
-						<프로젝트명></프로젝트명>
-					</record>
-				</Contents>
-			</Dataset>
 			<Dataset DataSetType="Dataset" Id="ds_status">
 				<Contents>
 					<colinfo id="code" size="256" summ="default" type="STRING"/>
-					<colinfo id="value" size="256" summ="default" type="STRING"/>
+					<colinfo id="data" size="256" summ="default" type="STRING"/>
 					<record>
-						<code>1</code>
-						<value>계획</value>
+						<code>계획</code>
+						<data>계획</data>
 					</record>
 					<record>
-						<code>2</code>
-						<value>진행</value>
+						<code>계획</code>
+						<data>진행</data>
 					</record>
 					<record>
-						<code>3</code>
-						<value>종료</value>
+						<code>계획</code>
+						<data>종료</data>
 					</record>
 				</Contents>
 			</Dataset>
@@ -300,55 +25,74 @@
 					<colinfo id="voClass" size="256" summ="default" type="STRING"/>
 				</Contents>
 			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_pjt_list">
+				<Contents>
+					<colinfo id="pjId" size="6" summ="default" type="STRING"/>
+					<colinfo id="pjNm" size="12" summ="default" type="STRING"/>
+					<colinfo id="pmNm" size="12" summ="default" type="STRING"/>
+					<colinfo id="planStartDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="planEndDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="realStartDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="realEndDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="downPay" size="10" summ="default" type="STRING"/>
+					<colinfo id="custNm" size="12" summ="default" type="STRING"/>
+					<colinfo id="custStatus" size="6" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
 		</Datasets>
 		<Tab Height="540" Id="Tab0" Left="4" TabOrder="1" Width="792">
 			<Contents>
 				<TabPage BorderColor="black" Height="515" Id="tab1" Left="2" TabOrder="4" Text="프로젝트&#32;관리" Top="23" Width="788">
-					<Static Border="Flat" BorderColor="SCROLLBAR" Height="344" Id="Static0" Left="262" TabOrder="8" Top="105" Width="512"></Static>
+					<Static Border="Flat" BorderColor="SCROLLBAR" Height="344" Id="Static0" Left="266" TabOrder="8" Top="105" Width="512"></Static>
 					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
 					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="221" TabOrder="2" Text="프로젝트&#32;관리" Top="23" VAlign="Middle" Width="330"></Static>
-					<Grid BindDataset="ds_pjt_mng" BkColor2="default" BoldHead="true" Bottom="497" Enable="true" EndLineColor="default" Height="396" Id="Grid0" InputPanel="FALSE" Left="6" LineColor="default" Right="234" TabOrder="3" TabStop="true" Top="101" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="228">
+					<Grid BindDataset="ds_pjt_list" BkColor2="default" BoldHead="true" Bottom="497" Enable="true" EndLineColor="default" Height="396" Id="Grid0" InputPanel="FALSE" Left="6" LineColor="default" Right="234" TabOrder="3" TabStop="true" Top="101" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="228">
 						<contents>
 							<format id="Default">
 								<columns>
-									<col width="56"/>
-									<col width="126"/>
 									<col width="42"/>
+									<col width="83"/>
+									<col width="46"/>
+									<col width="53"/>
 								</columns>
 								<head>
-									<cell col="0" combodisplayrowcnt="6" display="text" edit="normal" font="Tahoma,11" text="ID"/>
-									<cell col="1" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="프로젝트명"/>
-									<cell col="2" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="PM"/>
+									<cell col="0" display="text" font="Tahoma,11" text="ID"/>
+									<cell col="1" display="text" font="Tahoma,11" text="프로젝트명"/>
+									<cell col="2" display="text" font="Tahoma,11" text="PM"/>
+									<cell col="3" display="text" font="Tahoma,11" text="상태"/>
 								</head>
 								<body>
-									<cell col="0" display="text"/>
-									<cell col="1" display="text"/>
-									<cell col="2" display="text"/>
+									<cell align="center" col="0" colid="pjId" display="text" font="Tahoma,11"/>
+									<cell align="center" col="1" colid="pjNm" display="text" font="Tahoma,11"/>
+									<cell align="center" col="2" colid="pmNm" display="text" font="Tahoma,11"/>
+									<cell align="center" col="3" colid="custStatus" display="text" font="Tahoma,11"/>
 								</body>
 							</format>
 						</contents>
 					</Grid>
-					<Button Font="Tahoma,12" Height="30" Id="Button0" Left="702" TabOrder="4" Text="삭제" Top="465" Width="74"></Button>
-					<Button Font="Tahoma,12" Height="30" Id="Button1" Left="612" TabOrder="5" Text="수정" Top="465" Width="74"></Button>
+					<Button Font="Tahoma,12" Height="30" Id="Button0" Left="702" OnClick="Tab0_tab1_Button0_OnClick" TabOrder="4" Text="삭제" Top="465" Width="74"></Button>
+					<Button Font="Tahoma,12" Height="30" Id="Button1" Left="612" OnClick="Tab0_tab1_Button1_OnClick" TabOrder="5" Text="수정" Top="465" Width="74"></Button>
 					<Button Font="Tahoma,12" Height="30" Id="Button2" Left="522" OnClick="Tab0_tab1_Button2_OnClick" TabOrder="6" Text="입력" Top="465" Width="74"></Button>
-					<Combo BindDataset="ds_status" CodeColumn="code" DataColumn="value" DisplayRowCnt="3" Font="Tahoma,11" Height="27" Id="Combo0" InnerDataset="ds_status" Left="374" TabOrder="7" Top="397" Value="1" Width="60"></Combo>
-					<Shape Bottom="296" Height="38" Id="Shape0" Left="272" LineColor="SCROLLBAR" Right="766" TabOrder="9" Top="258" Width="494"></Shape>
-					<Button Font="Tahoma,12" Height="30" Id="Button3" Left="434" TabOrder="10" Text="조회" Top="465" Width="74"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button01" Left="280" TabOrder="2" Text="프로젝트명" Top="128" Width="93"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button21" Left="280" TabOrder="6" Text="일정(계획)" Top="180" Width="93"></Button>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button31" Left="280" OnClick="Button31_OnClick" TabOrder="9" Text="일정(실제)" Top="232" Width="93"></Button>
+					<Combo BindDataset="ds_pjt_list" CodeColumn="code" Column="custStatus" DataColumn="data" DisplayRowCnt="3" Font="Tahoma,11" Height="27" Id="Combo0" InnerDataset="ds_status" Left="374" TabOrder="7" Top="397" Width="60"></Combo>
+					<Shape Bottom="304" Height="38" Id="Shape0" Left="272" LineColor="SCROLLBAR" Right="766" TabOrder="9" Top="266" Width="494"></Shape>
+					<Button Font="Tahoma,12" Height="30" Id="Button3" Left="434" OnClick="Tab0_tab1_Button3_OnClick" TabOrder="10" Text="조회" Top="465" Width="74"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button011" Left="280" TabOrder="2" Text="프로젝트ID" Top="116" Width="93"></Button>
+					<Edit BindDataset="ds_pjt_list" Column="pjId" Font="Tahoma,11" Height="27" Id="Edit3" Left="372" MaxLength="6" TabOrder="15" Top="116" Width="98"></Edit>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button01" Left="280" TabOrder="2" Text="프로젝트명" Top="156" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button21" Left="280" TabOrder="6" Text="일정(계획)" Top="200" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button31" Left="280" OnClick="Button31_OnClick" TabOrder="9" Text="일정(실제)" Top="244" Width="93"></Button>
 					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button41" Left="280" OnClick="Button11_OnClick" TabOrder="12" Text="계약금액" Top="300" Width="93"></Button>
 					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button51" Left="280" OnClick="Button11_OnClick" TabOrder="14" Text="계약처" Top="348" Width="93"></Button>
-					<Edit Font="Tahoma,11" Height="27" Id="Edit3" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="15" Top="348" Width="188"></Edit>
-					<Edit Font="Tahoma,11" Height="27" Id="Edit2" Left="372" MaxLength="10" Readonly="TRUE" TabOrder="13" Top="300" Width="188"></Edit>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar21" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="10" Top="232" Width="126"></Calendar>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar31" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="11" Top="232" Width="126"></Calendar>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar11" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="8" Top="180" Width="126"></Calendar>
-					<Calendar Font="Tahoma,11" Height="27" Id="Calendar01" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="7" Top="180" Width="126"></Calendar>
-					<Edit AutoSelect="TRUE" Font="Tahoma,11" Height="27" Id="Edit0" Left="372" MaxLength="6" Readonly="TRUE" TabOrder="3" Top="128" Width="192"></Edit>
-					<Edit Font="Tahoma,11" Height="27" Id="Edit1" Left="656" MaxLength="6" Readonly="TRUE" TabOrder="5" Top="128" Width="100"></Edit>
-					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button11" Left="564" OnClick="Button11_OnClick" TabOrder="4" Text="P&#32;M" Top="128" Width="93"></Button>
+					<Edit BindDataset="ds_pjt_list" Column="downPay" Font="Tahoma,11" Height="27" Id="Edit2" Left="372" MaxLength="10" TabOrder="13" Top="300" Width="188"></Edit>
+					<Calendar BindDataset="ds_pjt_list" Column="realStartDate" Font="Tahoma,11" Height="27" Id="Calendar21" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="10" Top="244" Width="126"></Calendar>
+					<Calendar BindDataset="ds_pjt_list" Column="realEndDate" Font="Tahoma,11" Height="27" Id="Calendar31" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="11" Top="244" Width="126"></Calendar>
+					<Calendar BindDataset="ds_pjt_list" Column="planEndDate" Font="Tahoma,11" Height="27" Id="Calendar11" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="8" Top="200" Width="126"></Calendar>
+					<Calendar BindDataset="ds_pjt_list" Column="planStartDate" Font="Tahoma,11" Height="27" Id="Calendar01" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="7" Top="200" Width="126"></Calendar>
+					<Edit AutoSelect="TRUE" BindDataset="ds_pjt_list" Column="pjNm" Font="Tahoma,11" Height="27" Id="Edit0" Left="372" MaxLength="6" TabOrder="3" Top="156" Width="192"></Edit>
+					<Edit BindDataset="ds_pjt_list" Column="pmNm" Font="Tahoma,11" Height="27" Id="Edit1" Left="656" MaxLength="6" TabOrder="5" Top="156" Width="100"></Edit>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button11" Left="564" OnClick="Button11_OnClick" TabOrder="4" Text="P&#32;M" Top="156" Width="93"></Button>
 					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button61" Left="280" OnClick="Button11_OnClick" TabOrder="16" Text="계약상태" Top="396" Width="93"></Button>
+					<Edit BindDataset="ds_pjt_list" Column="custNm" Font="Tahoma,11" Height="27" Id="Edit4" Left="370" MaxLength="6" TabOrder="27" Top="349" Width="188"></Edit>
 				</TabPage>
 				<TabPage Height="515" Id="tab2" Left="2" TabOrder="4" Text="원가관리" Top="23" Width="788"></TabPage>
 				<TabPage Height="515" Id="tab3" Left="2" TabOrder="4" Text="현황분석" Top="23" Width="788"></TabPage>
@@ -359,7 +103,10 @@
 			</Contents>
 		</Tab>
 	</Form>
-	<Script><![CDATA[
+	<Script><![CDATA[function form_OnLoadCompleted(obj)
+{
+	Tab0_tab1_Button3_OnClick(obj);
+}
 
 function fnSetVoInfo(objFrm, strVoClass)
 {
@@ -369,6 +116,7 @@ function fnSetVoInfo(objFrm, strVoClass)
 }
 
 
+//fnCmTr함수 정의
 function fnCmTr(objFrm, svcid, strController, strVoClass, inputDs, outputDs, params, callbackFnc)
 {
 
@@ -384,6 +132,7 @@ function fnCmTr(objFrm, svcid, strController, strVoClass, inputDs, outputDs, par
 				"fnCallback");
 }
 
+//처리 메세지 관련
 function fnCallback(svcid, errcd, errmsg)
 {
 	if ( svcid == "list" )
@@ -392,20 +141,60 @@ function fnCallback(svcid, errcd, errmsg)
 	}
 }
 
-
+//입력 팝업 띄우기 
 function Tab0_tab1_Button2_OnClick(obj)
 {
 	var ret = Dialog("DefApp::prt_cost_mng_insert.xml", "", 616, 320, "Autosize=false resize=false");
 	if ( ret == "0" )
 	{
-		//Button0.Click(); 어떤 기능을 하는지 아직 확인하지 못함
+		Tab0_tab1_Button3_OnClick(obj);
 	}
 }
 
-
+//조회
 function Tab0_tab1_Button3_OnClick(obj)
 {
-	transaction("list", "http://127.0.0.1:8080/miplatform/prtMngList.do", "", "ds_list=ds_output", "", "fnCallback");
+	transaction("list", "http://127.0.0.1:8080/miplatform/prtMngList.do", "", "ds_pjt_list=ds_output", "", "fnCallback");
+}
+
+//선택한 프로젝트 삭제
+function Tab0_tab1_Button0_OnClick(obj)
+{
+	if(Confirm("정말로 삭제하시겠습니까?(복구 불가능)"))
+		{
+			strParam = "selectedId=" + Quote(Tab0.tab1.Edit3.Text);
+			transaction("delete", "http://127.0.0.1:8080/miplatform/prtDelete.do", "", "", strParam, "fnCallback");
+	
+			Tab0_tab1_Button3_OnClick(obj);
+		} else {
+			Tab0_tab1_Button3_OnClick(obj);
+		}
+}
+
+//수정
+function Tab0_tab1_Button1_OnClick(obj)
+{
+	if(Confirm("정말로 수정 하시겠습니까?(복구 불가능)"))
+		{
+			var strSvcid = "update";
+			var strController = "http://127.0.0.1:8080/miplatform/prtUpdate.do";
+			var strVoClass = "egovframework.example.sample.service.SampleVO";
+			var strInputDs = "ds_input=ds_pjt_list:U";
+			var strOutputDs = "";
+			var strParam = "";
+			var strFnCallback = "fnCallback";
+			
+			fnCmTr(this, 
+					strSvcid, 
+					strController, 
+					strVoClass, 
+					strInputDs, 
+					strOutputDs, 
+					strParam, 
+					strFnCallback);
+		} else {
+			Tab0_tab1_Button3_OnClick(obj);
+		}
 }
 ]]></Script>
 </Window>
