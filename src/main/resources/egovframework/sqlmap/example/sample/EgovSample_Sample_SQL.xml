@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Sample">
+
+	<typeAlias alias="egovMap"
+		type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+	<typeAlias alias="searchVO"
+		type="egovframework.example.sample.service.SampleDefaultVO" />
+	
+	<resultMap id="sample"
+		class="egovframework.example.sample.service.SampleVO">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="description" column="description" />
+		<result property="useYn" column="use_yn" />
+		<result property="regUser" column="reg_user" />
+		<!-- 프로젝트 관리 -->
+		<result property="pjId" column="PJ_ID" />
+		<result property="pjNm" column="PJ_NM" />
+		<result property="pmNm" column="PM_NM" />
+		<result property="planStartDate" column="PLAN_START_DATE" />
+		<result property="planEndDate" column="PLAN_END_DATE" />
+		<result property="realStartDate" column="REAL_START_DATE" />
+		<result property="realEndDate" column="REAL_END_DATE" />
+		<result property="downPay" column="DOWN_PAY" />
+		<result property="custNm" column="CUST_NM" />
+		<result property="custStatus" column="CUST_STATUS" />
+		<!-- 매입매출 관리 -->
+		<result property="pjInoutId" column="PJ_INOUT_ID" />
+		<result property="inoutCategory" column="INOUT_CATEGORY" />
+		<result property="inoutDays" column="INOUT_DAYS" />
+		<result property="inoutCustNm" column="INOUT_CUST_NM" />
+		<result property="inoutPrice" column="INOUT_PRICE" />
+		<result property="inoutEtc" column="INOUT_ETC" />
+		<!-- 재료비/경비 -->
+		<result property="pjCostId" column="PJ_COST_ID" />
+		<result property="costDays" column="COST_DAYS" />
+		<result property="costCategory" column="COST_CATEGORY" />
+		<result property="costPrice" column="COST_PRICE" />
+		<result property="costEtc" column="COST_ETC" />
+		<result property="costBranch" column="COST_BRANCH" />
+		<!-- 인건비 -->
+		<result property="empId" column="EMP_ID" />
+		<result property="empNm" column="EMP_NM" />
+		<result property="manMonth" column="MANMONTH" />
+		<result property="startDate" column="START_DATE" />
+		<result property="endDate" column="END_DATE" />
+	</resultMap>
+
+	<!-- 노무비/비용 관련 쿼리 -->
+	<insert id="sampleDAO.insertSample1">
+		<![CDATA[
+			INSERT INTO pj_cost 
+				( PJ_ID
+				  , PJ_COST_ID
+				  , COST_DAYS
+				  , COST_CATEGORY
+				  , COST_PRICE
+				  , COST_ETC
+				  , COST_BRANCH )
+			VALUES (#pjId#
+				  , #pjCostId# 
+			      , #costDays#
+				  , #costCategory#
+				  , #costPrice#
+				  , #costEtc#
+				  , #costBranch# )
+		]]>
+	</insert>
+
+	<insert id="sampleDAO.nmbInsert">
+		<![CDATA[
+			INSERT INTO emp_mng 
+				( PJ_ID
+				  , EMP_ID
+				  , EMP_NM
+				  , MANMONTH
+				  , START_DATE
+				  , END_DATE )
+			VALUES (#pjId#
+			      , #empId#
+				  , #empNm#
+				  , #manMonth#
+				  , #startDate#
+				  , #endDate# )
+		]]>
+	</insert>
+
+	<update id="sampleDAO.updateSample1">
+		<![CDATA[
+			UPDATE pj_cost
+			SET COST_DAYS=#costDays#
+				, COST_CATEGORY=#costCategory#
+				, COST_PRICE=#costPrice#
+				, COST_ETC=#costEtc#
+				, COST_BRANCH=#costBranch#
+			WHERE PJ_COST_ID=#pjCostId#
+		]]>
+	</update>
+
+	<update id="sampleDAO.nmbUpdate">
+		<![CDATA[
+			UPDATE emp_mng
+			SET	 
+				PJ_ID=#pjId#
+				, EMP_NM=#empNm#
+				, MANMONTH=#manMonth#
+				, START_DATE=#startDate#
+				, END_DATE=#endDate#
+			WHERE EMP_ID=#empId#
+		]]>
+	</update>
+	
+	<delete id="sampleDAO.deleteSample1">
+		<![CDATA[
+			DELETE FROM pj_cost 
+			WHERE PJ_COST_ID=#pjCostId#
+		]]>
+	</delete>
+
+	<delete id="sampleDAO.nmbDelete">
+		<![CDATA[
+			DELETE FROM emp_mng 
+			WHERE EMP_ID=#empId#
+		]]>
+	</delete>
+
+<!--<select id="sampleDAO.selectSampleList1" parameterClass="searchVO" resultClass="egovMap">
+		SELECT
+		PJ_ID, PJ_COST_ID, COST_DAYS, COST_CATEGORY, COST_BRANCH, COST_PRICE,
+		COST_ETC
+		FROM pj_cost
+		WHERE 1=1
+		ORDER BY PJ_COST_ID ASC	
+	</select> -->
+	
+	<select id="sampleDAO.selectSampleList1" resultClass="egovMap">
+		SELECT
+		PJ_ID, PJ_COST_ID, COST_DAYS, COST_CATEGORY, COST_BRANCH, COST_PRICE,
+		COST_ETC
+		FROM pj_cost
+		WHERE 1=1
+		ORDER BY PJ_COST_ID ASC	
+	</select>
+
+<!--<select id="sampleDAO.selectNmbList1" parameterClass="searchVO"
+		resultClass="egovMap">
+		SELECT
+		PJ_ID, EMP_ID, EMP_NM, MANMONTH, START_DATE, END_DATE
+		FROM emp_mng
+		WHERE EMP_NM=#empNm#
+	</select> -->
+	
+   <select id="sampleDAO.selectNmbList1" resultClass="egovMap">
+		SELECT
+		PJ_ID, EMP_ID, EMP_NM, MANMONTH, START_DATE, END_DATE
+		FROM emp_mng
+		WHERE EMP_NM=#empNm#
+	</select>
+	
+	
+
+	<!-- <select id="sampleDAO.manpowerList" parameterClass="searchVO"
+		resultClass="egovMap">
+		SELECT
+		PJ_ID, EMP_ID, EMP_NM, MANMONTH, START_DATE, END_DATE
+		FROM emp_mng
+		WHERE 1=1
+		ORDER BY EMP_ID ASC
+	</select> -->
+	
+	<select id="sampleDAO.manpowerList" resultClass="egovMap">
+		SELECT
+		PJ_ID, EMP_ID, EMP_NM, MANMONTH, START_DATE, END_DATE
+		FROM emp_mng
+		WHERE 1=1
+		ORDER BY EMP_ID ASC
+	</select>
+
+	<select id="sampleDAO.inoutAnsisList" parameterClass="searchVO"
+		resultClass="egovMap">
+
+	SELECT TO_CHAR(PJ_ID) AS PJ_ID
+       , TO_CHAR(PJ_NM) AS PJ_NM
+       , TO_CHAR(NVL(STS_ANSIS, 0)) AS STS_ANSIS
+       , TO_CHAR(NVL(MAN_MONTH, 0)) AS MAN_MONTH
+       , TO_CHAR(NVL(JRB_PRICE, 0)) AS JRB_PRICE
+       , TO_CHAR(NVL(KB_PRICE, 0)) AS KB_PRICE
+       , TO_CHAR(NVL((STS_ANSIS-(MAN_MONTH + NVL(JRB_PRICE, 0) + NVL(KB_PRICE, 0))),0)) AS INCOME
+       , TO_CHAR(NVL(ENTER_PRICE, 0)) AS ENTER_PRICE
+       , TO_CHAR(NVL(TEAM_PRICE, 0)) AS TEAM_PRICE
+       , TO_CHAR(NVL((STS_ANSIS-(MAN_MONTH + NVL(JRB_PRICE, 0) + NVL(KB_PRICE, 0))) - (NVL(ENTER_PRICE, 0)+NVL(TEAM_PRICE, 0)), 0)) AS BIZ_PROFIT
+       , TO_CHAR(NVL(OFFI_PRICE, 0)) AS OFFI_PRICE
+       , TO_CHAR(NVL((STS_ANSIS-(MAN_MONTH + NVL(JRB_PRICE, 0) + NVL(KB_PRICE, 0))) - (NVL(ENTER_PRICE, 0)+NVL(TEAM_PRICE, 0)) - NVL(OFFI_PRICE, 0), 0)) AS  NET_PROFIT
+FROM (SELECT DISTINCT A.PJ_ID
+             , PJ_NM
+             , (DOWN_PAY + (SELECT SUM(INOUT_PRICE) FROM PJ_INOUT WHERE PJ_ID=#pjId# AND INOUT_CATEGORY = '매출')) AS STS_ANSIS
+             , (SELECT ROUND(SUM((MANMONTH/30)*(TO_DATE(END_DATE)-TO_DATE(START_DATE))),0) AS MONTH FROM EMP_MNG WHERE PJ_ID = #pjId#) AS MAN_MONTH
+             , (SELECT SUM(COST_PRICE) FROM PJ_COST WHERE PJ_ID = #pjId# AND COST_BRANCH = '재료비') AS JRB_PRICE
+             , (SELECT SUM(COST_PRICE) FROM PJ_COST WHERE PJ_ID = #pjId# AND COST_BRANCH = '경비') AS KB_PRICE
+             , (SELECT SUM(NVL(INOUT_PRICE, 0)) FROM PJ_INOUT WHERE PJ_ID = #pjId# AND INOUT_CATEGORY = '매입' AND INOUT_ETC = '본부공통비') AS ENTER_PRICE
+             , (SELECT SUM(NVL(INOUT_PRICE, 0)) FROM PJ_INOUT WHERE PJ_ID = #pjId# AND INOUT_CATEGORY = '매입' AND INOUT_ETC = '팀공통비') AS TEAM_PRICE
+             , (SELECT SUM(NVL(INOUT_PRICE, 0)) FROM PJ_INOUT WHERE PJ_ID = #pjId# AND INOUT_CATEGORY = '매입' AND INOUT_ETC = '판공비') AS OFFI_PRICE
+      FROM PJ_MNG A JOIN PJ_INOUT B
+      ON A.PJ_ID = B.PJ_ID
+      WHERE A.PJ_ID = #pjId#)
+	</select>
+
+
+	<!-- 프로젝트 관리 페이지 관련 쿼리 -->
+
+	<!-- 프로젝트 등록 -->
+	<insert id="sampleDAO.insertPrt">
+		<![CDATA[
+			INSERT INTO PJ_MNG
+				( PJ_ID
+				  , PJ_NM
+				  , PM_NM
+				  , PLAN_START_DATE
+				  , PLAN_END_DATE
+				  , REAL_START_DATE
+				  , REAL_END_DATE
+				  , DOWN_PAY
+				  , CUST_NM
+				  , CUST_STATUS )
+			VALUES ( (SELECT MAX(PJ_ID) FROM PJ_MNG)+1
+				  , #pjNm#
+				  , #pmNm#
+				  , #planStartDate#
+				  , #planEndDate#
+				  , #realStartDate#
+				  , #realEndDate#
+				  , #downPay#
+				  , #custNm#
+				  , #custStatus# )
+		]]>
+	</insert>
+
+	<!-- 프로젝트 수정 -->
+	<update id="sampleDAO.updatePrt">
+		<![CDATA[
+			UPDATE PJ_MNG
+			SET PJ_NM=#pjNm#
+				, PM_NM=#pmNm#
+				, PLAN_START_DATE=#planStartDate#
+				, PLAN_END_DATE=#planEndDate#
+				, REAL_START_DATE=#realStartDate#
+				, REAL_END_DATE=#realEndDate#
+				, DOWN_PAY=#downPay#
+				, CUST_NM=#custNm#
+				, CUST_STATUS=#custStatus#
+			WHERE PJ_ID=#pjId#
+		]]>
+	</update>
+
+	<!-- 프로젝트 삭제 -->
+	<delete id="sampleDAO.deletePrt">
+		<![CDATA[
+			DELETE FROM PJ_MNG 
+			WHERE PJ_ID=#pjId#
+		]]>
+	</delete>
+
+	<!-- 프로젝트 리스트 조회 -->
+	<select id="sampleDAO.selectPrtList" parameterClass="searchVO"
+		resultClass="egovMap">
+		SELECT
+		PJ_ID
+		, PJ_NM
+		, PM_NM
+		, PLAN_START_DATE
+		, PLAN_END_DATE
+		, REAL_START_DATE
+		, REAL_END_DATE
+		, DOWN_PAY
+		, CUST_NM
+		, CUST_STATUS
+		FROM PJ_MNG
+		WHERE 1=1
+		ORDER BY PJ_ID ASC
+	</select>
+
+	<!-- 프로젝트 매입 /매출 관리 페이지 관련 쿼리 -->
+
+	<!-- 프로젝트 리스트 조회(콤보 박스 삽입용) -->
+	<select id="sampleDAO.selectPrtNameList"
+		parameterClass="searchVO" resultClass="egovMap">
+		SELECT
+		PJ_ID
+		, PJ_NM
+		FROM PJ_MNG
+		WHERE 1=1
+		ORDER BY PJ_ID ASC
+	</select>
+
+	<!-- 프로젝트 매입/매출 조회 -->
+	<select id="sampleDAO.selectInoutList" parameterClass="searchVO"
+		resultClass="egovMap">
+		SELECT
+		A.PJ_ID AS PJ_ID
+		, PJ_NM
+		, PJ_INOUT_ID
+		, INOUT_DAYS
+		, INOUT_CUST_NM
+		, INOUT_PRICE
+		, INOUT_ETC
+		, INOUT_CATEGORY
+		FROM PJ_INOUT A, PJ_MNG B
+		WHERE A.PJ_ID = B.PJ_ID
+		AND INOUT_CATEGORY = #inoutCategory#
+		AND A.PJ_ID = (SELECT
+		PJ_ID
+		FROM PJ_MNG
+		WHERE PJ_NM = #pjNm#)
+		ORDER BY PJ_INOUT_ID ASC
+	</select>
+
+	<!-- 프로젝트 매입/매출 상세 조회 -->
+	<select id="sampleDAO.selectInoutOne" resultClass="egovMap">
+		SELECT
+		A.PJ_ID
+		, PJ_NM
+		, PJ_INOUT_ID
+		, INOUT_DAYS
+		, INOUT_CUST_NM
+		, INOUT_PRICE
+		, INOUT_ETC
+		, INOUT_CATEGORY
+		FROM PJ_INOUT A, PJ_MNG B
+		WHERE A.PJ_ID = B.PJ_ID
+		AND PJ_INOUT_ID = #pjInoutId#
+	</select>
+
+	<!-- 매입 매출 등록 -->
+	<insert id="sampleDAO.insertInout">
+		<![CDATA[
+			INSERT INTO PJ_INOUT
+				( PJ_ID
+				, PJ_INOUT_ID
+				, INOUT_DAYS
+				, INOUT_CUST_NM
+				, INOUT_PRICE
+				, INOUT_ETC
+				, INOUT_CATEGORY )
+			VALUES ( #pjId#
+				  , (SELECT MAX(PJ_INOUT_ID) FROM PJ_INOUT)+1
+				  , #inoutDays#
+				  , #inoutCustNm#
+				  , #inoutPrice#
+				  , #inoutEtc#
+				  , #inoutCategory# )
+		]]>
+	</insert>
+
+	<!-- 매입 매출 등록 -->
+	<update id="sampleDAO.updateInout">
+		<![CDATA[
+			UPDATE PJ_INOUT
+			SET INOUT_DAYS = #inoutDays#
+				, INOUT_CUST_NM = #inoutCustNm#
+				, INOUT_PRICE = #inoutPrice#
+				, INOUT_ETC = #inoutEtc#
+				, INOUT_CATEGORY = #inoutCategory#
+			WHERE PJ_INOUT_ID = #pjInoutId#
+		]]>
+	</update>
+
+	<!-- 매입 매출 삭제 -->
+	<delete id="sampleDAO.deleteInout">
+		<![CDATA[
+			DELETE FROM PJ_INOUT 
+			WHERE INOUT_ETC=#inoutEtc#
+		]]>
+	</delete>
+
+
+	<!-- 기존 샘플 쿼리 -->
+
+	<insert id="sampleDAO.insertSample">
+		<![CDATA[
+			INSERT INTO SAMPLE 
+				( ID
+				  , NAME
+				  , DESCRIPTION
+				  , USE_YN
+				  , REG_USER )
+			VALUES ( #id#
+				  , #name#
+				  , #description#
+				  , #useYn#
+				  , #regUser# )
+		]]>
+	</insert>
+
+	<update id="sampleDAO.updateSample">
+		<![CDATA[
+			UPDATE SAMPLE
+			SET ID=#id#
+				, NAME=#name#
+				, DESCRIPTION=#description#
+				, USE_YN=#useYn#
+			WHERE ID=#id#
+		]]>
+	</update>
+
+
+	<delete id="sampleDAO.deleteSample">
+		<![CDATA[
+			DELETE FROM SAMPLE 
+			WHERE ID=#id#
+		]]>
+	</delete>
+
+	<select id="sampleDAO.selectSample" resultMap="sample">
+        <![CDATA[
+            SELECT
+                ID, NAME, DESCRIPTION, USE_YN, REG_USER
+            FROM SAMPLE 
+            WHERE ID=#id#
+        ]]>
+	</select>
+
+	<select id="sampleDAO.selectSampleList"
+		parameterClass="searchVO" resultClass="egovMap">
+		SELECT
+		ID, NAME, DESCRIPTION, USE_YN, REG_USER
+		FROM SAMPLE
+		WHERE 1=1
+		ORDER BY ID ASC
+	</select>
+
+	<select id="sampleDAO.selectSampleListTotCnt"
+		parameterClass="searchVO" resultClass="int">
+
+		SELECT COUNT(*) totcnt
+		FROM SAMPLE
+		WHERE 1=1
+		<isEqual prepend="AND" property="searchCondition"
+			compareValue="0">
+			ID LIKE '%' || #searchKeyword# || '%'
+		</isEqual>
+		<isEqual prepend="AND" property="searchCondition"
+			compareValue="1">
+			NAME LIKE '%' || #searchKeyword# || '%'
+		</isEqual>
+	</select>
+	
+
+
+</sqlMap>

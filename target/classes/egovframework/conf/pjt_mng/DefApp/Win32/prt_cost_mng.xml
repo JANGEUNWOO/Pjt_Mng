@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+	<Form Height="560" Id="cost_Mng" Left="8" OnLoadCompleted="form_OnLoadCompleted" PidAttrib="7" Title="프로젝트&#32;관리&#32;프로그램" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
+		<Datasets>
+			<Dataset DataSetType="Dataset" Id="ds_status">
+				<Contents>
+					<colinfo id="code" size="256" summ="default" type="STRING"/>
+					<colinfo id="data" size="256" summ="default" type="STRING"/>
+					<record>
+						<code>계획</code>
+						<data>계획</data>
+					</record>
+					<record>
+						<code>진행</code>
+						<data>진행</data>
+					</record>
+					<record>
+						<code>종료</code>
+						<data>종료</data>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_pjt_list">
+				<Contents>
+					<colinfo id="pjId" size="6" summ="default" type="STRING"/>
+					<colinfo id="pjNm" size="12" summ="default" type="STRING"/>
+					<colinfo id="pmNm" size="12" summ="default" type="STRING"/>
+					<colinfo id="planStartDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="planEndDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="realStartDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="realEndDate" size="8" summ="default" type="STRING"/>
+					<colinfo id="downPay" size="10" summ="default" type="STRING"/>
+					<colinfo id="custNm" size="12" summ="default" type="STRING"/>
+					<colinfo id="custStatus" size="6" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_inout">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="pjNm" size="256" summ="default" type="STRING"/>
+					<colinfo id="pjInoutId" size="256" summ="default" type="STRING"/>
+					<colinfo id="inoutDays" size="256" summ="default" type="STRING"/>
+					<colinfo id="inoutCustNm" size="256" summ="default" type="STRING"/>
+					<colinfo id="inoutPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="inoutEtc" size="256" summ="default" type="STRING"/>
+					<colinfo id="inoutCategory" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_inout_prIdNm">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="pjNm" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_inout_cate">
+				<Contents>
+					<colinfo id="code" size="256" summ="default" type="STRING"/>
+					<colinfo id="date" size="256" summ="default" type="STRING"/>
+					<record>
+						<code>매입</code>
+						<date>매입</date>
+					</record>
+					<record>
+						<code>매출</code>
+						<date>매출</date>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_param">
+				<Contents>
+					<colinfo id="pjInoutId" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_etcCost">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="pjCostId" size="256" summ="default" type="STRING"/>
+					<colinfo id="costDays" size="256" summ="default" type="STRING"/>
+					<colinfo id="costCategory" size="256" summ="default" type="STRING"/>
+					<colinfo id="costPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="costEtc" size="256" summ="default" type="STRING"/>
+					<colinfo id="costBranch" size="256" summ="default" type="STRING"/>
+					<record>
+						<costBranch></costBranch>
+						<costCategory></costCategory>
+						<costDays></costDays>
+						<costEtc></costEtc>
+						<costPrice></costPrice>
+						<pjCostId></pjCostId>
+						<pjId></pjId>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_voInfo">
+				<Contents>
+					<colinfo id="voClass" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_anlysis">
+				<Contents>
+					<colinfo id="항목" size="256" summ="default" type="STRING"/>
+					<colinfo id="금액" size="256" summ="default" type="STRING"/>
+					<record>
+						<금액></금액>
+						<항목>매출액</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>인건비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>재료비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>경비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>매출이익</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>본부공통비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>팀공통비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>영업이익</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>판공비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>순이익</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목></항목>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_manpower">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="empId" size="256" summ="default" type="STRING"/>
+					<colinfo id="empNm" size="256" summ="default" type="STRING"/>
+					<colinfo id="manMonth" size="256" summ="default" type="STRING"/>
+					<colinfo id="startDate" size="256" summ="default" type="STRING"/>
+					<colinfo id="endDate" size="256" summ="default" type="STRING"/>
+					<record>
+						<empId></empId>
+						<empNm></empNm>
+						<endDate></endDate>
+						<manMonth></manMonth>
+						<pjId></pjId>
+						<startDate></startDate>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_costStatus">
+				<Contents>
+					<colinfo id="code" size="256" summ="default" type="STRING"/>
+					<colinfo id="data" size="256" summ="default" type="STRING"/>
+					<record>
+						<code>재료비</code>
+						<data>재료비</data>
+					</record>
+					<record>
+						<code>경비</code>
+						<data>경비</data>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_STS_ANSIS">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="pjNm" size="256" summ="default" type="STRING"/>
+					<colinfo id="stsAnsis" size="256" summ="default" type="STRING"/>
+					<colinfo id="manMonth" size="256" summ="default" type="STRING"/>
+					<colinfo id="jrbPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="kbPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="Income" size="256" summ="default" type="STRING"/>
+					<colinfo id="enterPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="teamPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="bizProfit" size="256" summ="default" type="STRING"/>
+					<colinfo id="offiPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="netProfit" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+		</Datasets>
+		<Tab Height="550" Id="tab0" Left="-4" TabIndex="2" TabOrder="3" Top="4" Width="800">
+			<Contents>
+				<TabPage BorderColor="black" Height="525" Id="tab1" Left="2" TabOrder="1" Text="프로젝트&#32;관리" Top="23" Width="796">
+					<Static Border="Flat" BorderColor="SCROLLBAR" Height="344" Id="Static0" Left="266" TabOrder="8" Top="105" Width="512"></Static>
+					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
+					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="221" TabOrder="2" Text="프로젝트&#32;관리" Top="23" VAlign="Middle" Width="330"></Static>
+					<Grid BindDataset="ds_pjt_list" BkColor2="default" BoldHead="true" Bottom="497" Enable="true" EndLineColor="default" Height="396" Id="Grid0" InputPanel="FALSE" Left="6" LineColor="default" Right="234" TabOrder="3" TabStop="true" Top="101" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="228">
+						<contents>
+							<format id="Default">
+								<columns>
+									<col width="42"/>
+									<col width="83"/>
+									<col width="46"/>
+									<col width="53"/>
+								</columns>
+								<head>
+									<cell col="0" display="text" font="Tahoma,11" text="ID"/>
+									<cell col="1" display="text" font="Tahoma,11" text="프로젝트명"/>
+									<cell col="2" display="text" font="Tahoma,11" text="PM"/>
+									<cell col="3" display="text" font="Tahoma,11" text="상태"/>
+								</head>
+								<body>
+									<cell align="center" col="0" colid="pjId" display="text" font="Tahoma,11"/>
+									<cell align="center" col="1" colid="pjNm" display="text" font="Tahoma,11"/>
+									<cell align="center" col="2" colid="pmNm" display="text" font="Tahoma,11"/>
+									<cell align="center" col="3" colid="custStatus" display="text" font="Tahoma,11"/>
+								</body>
+							</format>
+						</contents>
+					</Grid>
+					<Button Cursor="HAND" Font="Tahoma,12" Height="30" Id="Button0" Left="702" OnClick="Tab0_tab1_Button0_OnClick" TabOrder="4" Text="삭제" Top="465" Width="74"></Button>
+					<Button Cursor="HAND" Font="Tahoma,12" Height="30" Id="Button1" Left="612" OnClick="Tab0_tab1_Button1_OnClick" TabOrder="5" Text="수정" Top="465" Width="74"></Button>
+					<Button Cursor="HAND" Font="Tahoma,12" Height="30" Id="Button2" Left="522" OnClick="Tab0_tab1_Button2_OnClick" TabOrder="6" Text="입력" Top="465" Width="74"></Button>
+					<Combo BindDataset="ds_pjt_list" CodeColumn="code" Column="custStatus" DataColumn="data" DisplayRowCnt="3" Font="Tahoma,11" Height="27" Id="Combo0" InnerDataset="ds_status" Left="374" TabOrder="7" Top="397" Width="60"></Combo>
+					<Shape Bottom="304" Height="38" Id="Shape0" Left="272" LineColor="SCROLLBAR" Right="766" TabOrder="9" Top="266" Width="494"></Shape>
+					<Button Cursor="HAND" Font="Tahoma,12" Height="30" Id="Button3" Left="434" OnClick="Tab0_tab1_Button3_OnClick" TabOrder="10" Text="조회" Top="465" Width="74"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button011" Left="280" TabOrder="2" Text="프로젝트ID" Top="116" Width="93"></Button>
+					<Edit BindDataset="ds_pjt_list" Column="pjId" Font="Tahoma,11" Height="27" Id="Edit3" Left="372" MaxLength="6" TabOrder="15" Top="116" Width="98"></Edit>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button01" Left="280" TabOrder="2" Text="프로젝트명" Top="156" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button21" Left="280" TabOrder="6" Text="일정(계획)" Top="200" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button31" Left="280" OnClick="Button31_OnClick" TabOrder="9" Text="일정(실제)" Top="244" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button41" Left="280" OnClick="Button11_OnClick" TabOrder="12" Text="계약금액" Top="300" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button51" Left="280" OnClick="Button11_OnClick" TabOrder="14" Text="계약처" Top="348" Width="93"></Button>
+					<Edit BindDataset="ds_pjt_list" Column="downPay" Font="Tahoma,11" Height="27" Id="Edit2" Left="372" MaxLength="10" TabOrder="13" Top="300" Width="188"></Edit>
+					<Calendar BindDataset="ds_pjt_list" Column="realStartDate" Font="Tahoma,11" Height="27" Id="Calendar21" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="10" Top="244" Width="126"></Calendar>
+					<Calendar BindDataset="ds_pjt_list" Column="realEndDate" Font="Tahoma,11" Height="27" Id="Calendar31" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="11" Top="244" Width="126"></Calendar>
+					<Calendar BindDataset="ds_pjt_list" Column="planEndDate" Font="Tahoma,11" Height="27" Id="Calendar11" Left="524" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="8" Top="200" Width="126"></Calendar>
+					<Calendar BindDataset="ds_pjt_list" Column="planStartDate" Font="Tahoma,11" Height="27" Id="Calendar01" Left="372" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="7" Top="200" Width="126"></Calendar>
+					<Edit AutoSelect="TRUE" BindDataset="ds_pjt_list" Column="pjNm" Font="Tahoma,11" Height="27" Id="Edit0" Left="372" MaxLength="6" TabOrder="3" Top="156" Width="192"></Edit>
+					<Edit BindDataset="ds_pjt_list" Column="pmNm" Font="Tahoma,11" Height="27" Id="Edit1" Left="656" MaxLength="6" TabOrder="5" Top="156" Width="100"></Edit>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button11" Left="564" OnClick="Button11_OnClick" TabOrder="4" Text="P&#32;M" Top="156" Width="93"></Button>
+					<Button Appearance="FLAT" BorderColor="SCROLLBAR" Font="Tahoma,11" Height="28" Id="Button61" Left="280" OnClick="Button11_OnClick" TabOrder="16" Text="계약상태" Top="396" Width="93"></Button>
+					<Edit BindDataset="ds_pjt_list" Column="custNm" Font="Tahoma,11" Height="27" Id="Edit4" Left="370" MaxLength="6" TabOrder="27" Top="349" Width="188"></Edit>
+				</TabPage>
+				<TabPage BorderColor="black" Height="525" Id="tab2" Left="2" TabOrder="2" Text="원가관리" Top="23" Width="796">
+					<Static Align="Center" Font="Tahoma,22" Height="33" Id="Static0" Left="298" TabOrder="1" Text="원가관리" Top="5" VAlign="Middle" Width="158"></Static>
+					<Tab Height="480" Id="Tab0" Left="6" TabIndex="1" TabOrder="2" Top="41" Width="776">
+						<Contents>
+							<TabPage BorderColor="black" Height="455" Id="tab1" Left="2" TabOrder="5" Text="노무비" Top="23" Width="772">
+								<Combo BindDataset="ds_manpower" CodeColumn="pjId" Column="pjId" DataColumn="pjNm" Height="25" Id="Combo0" INDEX="0" InnerDataset="ds_inout_prIdNm" Left="14" TabOrder="1" Top="12" Width="237"></Combo>
+								<Static Align="Center" BKColor="MENU" BorderColor="WINDOW" Height="26" Id="Static0" Left="11" TabOrder="2" Text="이름" Top="47" VAlign="Middle" Width="91"></Static>
+								<Edit BindDataset="ds_manpower" Column="empNm" Height="24" Id="Edit0" Left="111" TabOrder="3" Top="49" Width="118"></Edit>
+								<Static Align="Center" BKColor="MENU" BorderColor="WINDOW" Height="22" Id="Static1" Left="11" TabOrder="4" Text="시작일" Top="91" VAlign="Middle" Width="91"></Static>
+								<Calendar BindDataset="ds_manpower" Column="startDate" Height="26" Id="Calendar0" Left="110" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="5" Top="91" Width="116"></Calendar>
+								<Static Align="Center" BKColor="MENU" BorderColor="WINDOW" Height="22" Id="Static2" Left="11" TabOrder="6" Text="종료일" Top="127" VAlign="Middle" Width="91"></Static>
+								<Calendar BindDataset="ds_manpower" Column="endDate" Height="25" Id="Calendar1" Left="110" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="7" Top="127" Width="116"></Calendar>
+								<Static Align="Center" BKColor="MENU" BorderColor="WINDOW" Height="28" Id="Static3" Left="351" TabOrder="8" Text="인건비" Top="93" VAlign="Middle" Width="91"></Static>
+								<Static Align="Center" BKColor="MENU" BorderColor="WINDOW" Height="26" Id="Static4" Left="350" TabOrder="9" Text="사원번호" Top="49" VAlign="Middle" Width="91"></Static>
+								<Edit BindDataset="ds_manpower" Column="manMonth" Height="27" Id="Edit1" Left="450" TabOrder="10" Top="93" Width="116"></Edit>
+								<Edit BindDataset="ds_manpower" Column="empId" Height="26" Id="Edit2" Left="450" TabOrder="11" Top="49" Width="116"></Edit>
+								<Grid BindDataset="ds_manpower" BkColor2="default" BoldHead="true" Bottom="429" Enable="true" EndLineColor="default" Height="247" Id="Grid0" InputPanel="FALSE" Left="14" LineColor="default" Right="758" TabOrder="12" TabStop="true" Top="182" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="744">
+									<contents>
+										<format id="Default">
+											<columns>
+												<col width="112"/>
+												<col width="96"/>
+												<col width="96"/>
+												<col width="150"/>
+												<col width="142"/>
+												<col width="144"/>
+											</columns>
+											<head>
+												<cell col="0" display="text" text="프로젝트"/>
+												<cell col="1" display="text" text="사원번호"/>
+												<cell col="2" display="text" text="사원명"/>
+												<cell col="3" display="text" text="금액(맨먼스)"/>
+												<cell col="4" display="text" text="시작일"/>
+												<cell col="5" display="text" text="종료일"/>
+											</head>
+											<body>
+												<cell col="0" colid="pjId" display="text"/>
+												<cell col="1" colid="empId" display="text"/>
+												<cell col="2" colid="empNm" display="text"/>
+												<cell col="3" colid="manMonth" display="text"/>
+												<cell col="4" colid="startDate" display="text"/>
+												<cell col="5" colid="endDate" display="text"/>
+											</body>
+										</format>
+									</contents>
+								</Grid>
+								<Button Height="30" Id="Button1" Left="394" OnClick="tab0_tab2_Tab0_tab1_Button1_OnClick" TabOrder="13" Text="수정" Top="145" Width="80"></Button>
+								<Button Height="31" Id="Button2" Left="482" OnClick="tab0_tab2_Tab0_tab1_Button2_OnClick" TabOrder="14" Text="추가" Top="145" Width="82"></Button>
+								<Button Height="31" Id="Button3" Left="570" OnClick="tab0_tab2_Tab0_tab1_Button3_OnClick" TabOrder="15" Text="삭제" Top="145" Width="88"></Button>
+								<Button Height="33" Id="Button4" Left="666" OnClick="tab0_tab2_Tab0_tab1_Button4_OnClick" TabOrder="16" Text="저장" Top="141" Width="85"></Button>
+								<Button BKColor="aqua" Height="34" Id="Button5" Left="696" OnClick="tab0_tab2_Tab0_tab1_Button5_OnClick" TabOrder="17" Text="refresh" Top="11" Width="42"></Button>
+								<Button BKColor="coral" Height="28" Id="Button6" Left="238" OnClick="tab0_tab2_Tab0_tab1_Button6_OnClick" TabOrder="18" Text="이름조회" Top="45" Width="80"></Button>
+								<Button Height="26" Id="Button0" Left="238" OnClick="tab0_tab2_Tab0_tab1_Button0_OnClick" TabOrder="19" Text="팝업" Top="81" Width="84"></Button>
+							</TabPage>
+							<TabPage BorderColor="black" Height="455" Id="tab2" Left="2" TabOrder="5" Text="재료비/경비" Top="23" Width="772">
+								<Combo BindDataset="ds_etcCost" CodeColumn="pjId" Column="pjId" DataColumn="pjNm" Height="22" Id="Combo0" INDEX="0" InnerDataset="ds_inout_prIdNm" Left="34" TabOrder="1" Top="17" Width="233"></Combo>
+								<Static Align="Center" BKColor="MENU" Height="24" Id="Static0" Left="30" TabOrder="2" Text="일자" Top="49" VAlign="Middle" Width="95"></Static>
+								<Static Align="Center" BKColor="MENU" Height="25" Id="Static1" Left="30" TabOrder="3" Text="항목" Top="81" VAlign="Middle" Width="95"></Static>
+								<Static Align="Center" BKColor="MENU" Height="25" Id="Static2" Left="31" TabOrder="4" Text="금액" Top="113" VAlign="Middle" Width="95"></Static>
+								<Static Align="Center" BKColor="MENU" Height="24" Id="Static3" Left="31" TabOrder="5" Text="비고" Top="149" VAlign="Middle" Width="95"></Static>
+								<Edit BindDataset="ds_etcCost" Column="costCategory" Height="24" Id="Edit1" Left="134" TabOrder="6" Top="81" Width="129"></Edit>
+								<Edit BindDataset="ds_etcCost" Column="costPrice" Height="24" Id="Edit2" Left="135" TabOrder="7" Top="113" Width="128"></Edit>
+								<Edit BindDataset="ds_etcCost" Column="costEtc" Height="25" Id="Edit3" Left="134" TabOrder="8" Top="148" Width="108"></Edit>
+								<Edit BindDataset="ds_etcCost" Column="pjCostId" Height="24" Id="Edit4" Left="451" TabOrder="9" Top="45" Width="132"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="28" Id="Static4" Left="339" TabOrder="10" Text="번호" Top="45" VAlign="Middle" Width="95"></Static>
+								<Static Align="Center" BKColor="MENU" Height="24" Id="Static5" Left="338" TabOrder="11" Text="구분" Top="81" VAlign="Middle" Width="95"></Static>
+								<Combo BindDataset="ds_etcCost" CodeColumn="code" Column="costBranch" DataColumn="data" Height="20" Id="Combo1" InnerDataset="ds_costStatus" Left="451" TabOrder="12" Top="81" Width="128"></Combo>
+								<Grid BindDataset="ds_etcCost" BkColor2="default" BoldHead="true" Bottom="437" Enable="true" EndLineColor="default" Height="247" Id="Grid0" InputPanel="FALSE" Left="10" LineColor="default" Right="762" TabOrder="13" TabStop="true" Top="190" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="752">
+									<contents>
+										<format id="Default">
+											<columns>
+												<col width="95"/>
+												<col width="80"/>
+												<col width="109"/>
+												<col width="89"/>
+												<col width="155"/>
+												<col width="124"/>
+												<col width="95"/>
+											</columns>
+											<head>
+												<cell col="0" display="text" text="프로젝트"/>
+												<cell col="1" display="text" text="번호"/>
+												<cell col="2" display="text" text="날짜"/>
+												<cell col="3" display="text" text="유형"/>
+												<cell col="4" display="text" text="금액"/>
+												<cell col="5" display="text" text="기타"/>
+												<cell col="6" display="text" text="구분"/>
+											</head>
+											<body>
+												<cell col="0" colid="pjId" display="text"/>
+												<cell col="1" colid="pjCostId" display="text"/>
+												<cell col="2" colid="costDays" display="text"/>
+												<cell col="3" colid="costCategory" display="text"/>
+												<cell col="4" colid="costPrice" display="text"/>
+												<cell col="5" colid="costEtc" display="text"/>
+												<cell col="6" colid="costBranch" display="text"/>
+											</body>
+										</format>
+									</contents>
+								</Grid>
+								<Button Height="28" Id="Button1" Left="406" OnClick="tab0_tab2_Tab0_tab2_Button1_OnClick" TabOrder="14" Text="수정" Top="157" Width="81"></Button>
+								<Button Height="28" Id="Button2" Left="494" OnClick="tab0_tab2_Tab0_tab2_Button2_OnClick" TabOrder="15" Text="추가" Top="157" Width="83"></Button>
+								<Button Height="32" Id="Button3" Left="582" OnClick="tab0_tab2_Tab0_tab2_Button3_OnClick" TabOrder="16" Text="삭제" Top="153" Width="84"></Button>
+								<Button Height="32" Id="Button4" Left="674" OnClick="tab0_tab2_Tab0_tab2_Button4_OnClick" TabOrder="17" Text="저장" Top="153" Width="83"></Button>
+								<Calendar BindDataset="ds_etcCost" Column="costDays" Height="24" Id="Calendar0" Left="134" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="18" Top="49" Width="133"></Calendar>
+								<Button BKColor="aqua" Height="38" Id="Button5" Left="698" OnClick="tab0_tab2_Tab0_tab2_Button5_OnClick" TabOrder="19" Text="refresh" Top="9" Width="42"></Button>
+							</TabPage>
+						</Contents>
+					</Tab>
+				</TabPage>
+				<TabPage BorderColor="black" Height="525" Id="tab3" Left="2" TabOrder="3" Text="현황분석" Top="23" Width="796">
+					<Combo CodeColumn="pjId" DataColumn="pjNm" Height="29" Id="Combo0" InnerDataset="ds_inout_prIdNm" Left="198" TabOrder="1" Text="프로젝트를&#32;선택하세요." Top="93" Width="308"></Combo>
+					<Static Align="Center" Font="Tahoma,18" Height="43" Id="Static0" Left="295" TabOrder="2" Text="현황분석" Top="10" VAlign="Middle" Width="219"></Static>
+					<Button Height="29" Id="Button0" Left="522" OnClick="tab0_tab3_Button0_OnClick" TabOrder="3" Text="조회" Top="93" Width="77"></Button>
+					<Static Align="Center" BKColor="aquamarine" Height="24" Id="Static1" Left="198" TabOrder="4" Text="매출액" Top="137" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="MENU" Height="24" Id="Static2" Left="198" TabOrder="5" Text="노무비" Top="169" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="MENU" Height="24" Id="Static3" Left="198" TabOrder="6" Text="재료비" Top="201" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="MENU" Height="24" Id="Static4" Left="198" TabOrder="7" Text="경비" Top="233" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="aquamarine" Height="24" Id="Static5" Left="198" TabOrder="8" Text="매출이익" Top="265" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="MENU" Height="24" Id="Static6" Left="198" TabOrder="9" Text="본부공통비" Top="297" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="MENU" Height="24" Id="Static7" Left="198" TabOrder="10" Text="팀공통비" Top="329" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="aquamarine" Height="24" Id="Static8" Left="198" TabOrder="11" Text="영업이익" Top="361" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="MENU" Height="24" Id="Static9" Left="198" TabOrder="12" Text="판공비" Top="393" VAlign="Middle" Width="89"></Static>
+					<Static Align="Center" BKColor="aquamarine" Height="24" Id="Static10" Left="198" TabOrder="13" Text="순이익" Top="425" VAlign="Middle" Width="89"></Static>
+					<Edit BindDataset="ds_STS_ANSIS" Column="stsAnsis" Height="22" Id="Edit0" Left="321" TabOrder="14" Top="138" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="manMonth" Height="22" Id="Edit1" Left="321" TabOrder="15" Top="170" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="jrbPrice" Height="22" Id="Edit2" Left="321" TabOrder="16" Top="198" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="kbPrice" Height="22" Id="Edit3" Left="321" TabOrder="17" Top="230" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="Income" Height="22" Id="Edit4" Left="321" TabOrder="18" Top="262" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="enterPrice" Height="22" Id="Edit5" Left="321" TabOrder="19" Top="294" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="teamPrice" Height="22" Id="Edit6" Left="321" TabOrder="20" Top="330" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="bizProfit" Height="22" Id="Edit7" Left="322" TabOrder="21" Top="361" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="offiPrice" Height="22" Id="Edit8" Left="322" TabOrder="22" Top="393" Width="213"></Edit>
+					<Edit BindDataset="ds_STS_ANSIS" Column="netProfit" Height="22" Id="Edit9" Left="321" TabOrder="23" Top="426" Width="213"></Edit>
+				</TabPage>
+				<TabPage BorderColor="black" Height="525" Id="tab4" Left="2" TabOrder="4" Text="매출관리" Top="23" Width="796">
+					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
+					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="225" TabOrder="2" Text="매출관리" Top="27" VAlign="Middle" Width="330"></Static>
+					<Button Font="Tahoma,11" Height="30" Id="Button0" Left="430" OnClick="Tab0_tab4_Button0_OnClick" TabOrder="3" Text="조회" Top="105" Width="85"></Button>
+					<Button Font="Tahoma,11" Height="30" Id="Button1" Left="590" OnClick="Tab0_tab4_Button1_OnClick" TabOrder="4" Text="등록" Top="473" Width="85"></Button>
+					<Button Font="Tahoma,11" Height="30" Id="Button2" Left="690" OnClick="Tab0_tab4_Button2_OnClick" TabOrder="5" Text="관리" Top="473" Width="85"></Button>
+					<Combo BindDataset="ds_inout" CodeColumn="pjId" Column="pjId" DataColumn="pjNm" Font="Tahoma,11" Height="32" Id="Combo0" InnerDataset="ds_inout_prIdNm" Left="2" TabOrder="6" Top="101" Value="1" Width="359"></Combo>
+					<Radio CodeColumn="code" DataColumn="date" Font="Tahoma,11" Height="44" Id="Radio0" INDEX="-1" InnerDataset="ds_inout_cate" Left="370" TabOrder="7" Top="97" Value="매입" Width="56"></Radio>
+					<Grid BindDataset="ds_inout" BkColor2="default" BoldHead="true" Bottom="463" Enable="true" EndLineColor="default" Height="306" Id="Grid0" InputPanel="FALSE" Left="7" LineColor="default" OnCellDBLClick="inout_mng_popup_OnClick" Right="775" TabOrder="8" TabStop="true" Top="157" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="768">
+						<contents>
+							<format id="Default">
+								<columns>
+									<col width="72"/>
+									<col width="160"/>
+									<col width="93"/>
+									<col width="115"/>
+									<col width="133"/>
+									<col width="192"/>
+								</columns>
+								<head>
+									<cell col="0" display="text" font="Tahoma,11" text="구분"/>
+									<cell col="1" display="text" font="Tahoma,11" text="프로젝트명"/>
+									<cell col="2" display="text" font="Tahoma,11" text="날짜"/>
+									<cell col="3" display="text" font="Tahoma,11" text="거래처"/>
+									<cell col="4" display="text" font="Tahoma,11" text="금액"/>
+									<cell col="5" display="text" font="Tahoma,11" text="비고"/>
+								</head>
+								<body>
+									<cell align="center" col="0" colid="inoutCategory" display="text" font="Tahoma,11"/>
+									<cell align="center" col="1" colid="pjNm" display="text" font="Tahoma,11"/>
+									<cell align="center" col="2" colid="inoutDays" display="text" font="Tahoma,11"/>
+									<cell align="center" col="3" colid="inoutCustNm" display="text" font="Tahoma,11"/>
+									<cell align="center" col="4" colid="inoutPrice" display="text" font="Tahoma,11"/>
+									<cell align="center" col="5" colid="inoutEtc" display="text" font="Tahoma,11"/>
+								</body>
+							</format>
+						</contents>
+					</Grid>
+				</TabPage>
+			</Contents>
+		</Tab>
+	</Form>
+	<Script><![CDATA[//#include "lib::common.js";
+
+function form_OnLoadCompleted(obj)
+{
+	Tab0_tab1_Button3_OnClick(obj);
+	prtNameSelect(obj);
+
+}
+
+
+
+function Tab0_tab1_Button2_OnClick(obj)
+{
+	var ret = Dialog("DefApp::prt_cost_mng_insert.xml", "", 616, 320, "Autosize=false resize=false");
+	if ( ret == "0" )
+	{
+		Tab0_tab1_Button3_OnClick(obj);
+		prtNameSelect(obj);
+	}
+}
+
+function Tab0_tab1_Button3_OnClick(obj)
+{
+	transaction("list", "http://127.0.0.1:8080/miplatform/prtMngList.do", "", "ds_pjt_list=ds_output", "", "fnCallback");
+}
+
+function Tab0_tab1_Button0_OnClick(obj)
+{
+	if(Confirm("정말로 삭제하시겠습니까?(복구 불가능)"))
+		{
+			strParam = "selectedId=" + Quote(Tab0.tab1.Edit3.Text);
+			transaction("delete", "http://127.0.0.1:8080/miplatform/prtDelete.do", "", "", strParam, "fnCallback");
+	
+			Tab0_tab1_Button3_OnClick(obj);
+			prtNameSelect(obj);
+		} else {
+			Tab0_tab1_Button3_OnClick(obj);
+			prtNameSelect(obj);
+		}
+}
+
+
+function Tab0_tab1_Button1_OnClick(obj)
+{
+	if(Confirm("정말로 수정 하시겠습니까?(복구 불가능)"))
+		{
+			var strSvcid = "update";
+			var strController = "http://127.0.0.1:8080/miplatform/prtUpdate.do";
+			var strVoClass = "egovframework.example.sample.service.SampleVO";
+			var strInputDs = "ds_input=ds_pjt_list:U";
+			var strOutputDs = "";
+			var strParam = "";
+			var strFnCallback = "fnCallback";
+			
+			fnCmTr(this, 
+					strSvcid, 
+					strController, 
+					strVoClass, 
+					strInputDs, 
+					strOutputDs, 
+					strParam, 
+					strFnCallback);
+		} else {
+			Tab0_tab1_Button3_OnClick(obj);
+		}
+}
+function showcostlist(obj){
+	
+	transaction("list", "http://127.0.0.1:8080/miplatform/egovSampleList1.do", "", "ds_etcCost=ds_output", "", "fnCallback");
+}
+
+function shownmblist(obj){
+	
+	transaction("nmblist", "http://127.0.0.1:8080/miplatform/Manpowerlist.do", "", "ds_manpower=ds_output", "", "fnCallback");
+
+}
+
+
+function prtNameSelect(obj){
+	transaction("list", "http://127.0.0.1:8080/miplatform/prtNameList.do", "", "ds_inout_prIdNm=ds_output", "", "fnCallback");
+	shownmblist(obj);
+	showcostlist(obj);
+}
+
+function Tab0_tab4_Button0_OnClick(obj)
+{		
+		strParam = "pjNm=" + Quote(Tab0.tab4.Combo0.Text) + " inoutCategory=" + Quote(Tab0.tab4.Radio0.Text);
+		transaction("list", "http://127.0.0.1:8080/miplatform/prtInoutList.do", "", "ds_inout=ds_output", strParam, "fnCallback");
+}
+
+function Tab0_tab4_Button1_OnClick(obj)
+{
+	var ret = Dialog("DefApp::prt_inout_mng_insert.xml", "", 616, 320, "Autosize=false resize=false");
+	if ( ret == "0" )
+	{
+		
+	}
+}
+
+function inout_mng_popup_OnClick(obj,nRow,nCell,nX,nY,nPivotIndex)
+{
+	//해당 row의 컬럼을 받아서 id값을 팝업으로 보내기
+	var param = ds_inout.GetColumn(nRow, "pjInoutId");
+	var ret = Dialog("DefApp::prt_inout_mng_updatedelete.xml", "param="+Quote(param), 616, 320, "Autosize=false resize=false");
+	if ( ret == "0" )
+	{
+		
+	}
+}
+
+
+function fnCallback(svcid, errcd, errmsg)
+{
+	if ( svcid == "detail" )
+	{
+	} else if ( svcid == "insert" )
+	{
+		alert(errmsg);
+		
+	}
+}
+
+function fnSetVoInfo(objFrm, strVoClass)
+{
+	objFrm.ds_voInfo.clearData();
+	var row = objFrm.ds_voInfo.addrow();
+	objFrm.ds_voInfo.setcolumn(row, "voClass", strVoClass);
+}
+
+
+function fnCmTr(objFrm, svcid, strController, strVoClass, inputDs, outputDs, params, callbackFnc)
+{
+
+	fnSetVoInfo(objFrm, strVoClass);
+
+	//strParam = "voClass='egovframework.rte.sample.service.SampleVO'";
+	
+	transaction(svcid, 
+				"svc::" + strController, 
+				"ds_voInfo=ds_voInfo " + inputDs, 
+				outputDs,
+				params,
+				"fnCallback");
+}
+
+
+
+function tab0_tab2_Tab0_tab1_Button1_OnClick(obj)
+{
+	var strSvcid = "update";
+	var strController = "http://127.0.0.1:8080/miplatform/manpowerUpdate.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_manpower:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+}
+
+function tab0_tab2_Tab0_tab1_Button2_OnClick(obj)
+{
+	ds_manpower.AddRow();
+	ds_manpower.SetColumn(ds_manpower.row, " " , " ");
+}
+
+function tab0_tab2_Tab0_tab1_Button3_OnClick(obj)
+{
+	//alert(tab0.tab2.Tab0.tab1.Edit2.Text);
+	if(confirm("정말 삭제하시겠습니까?")){
+	strParam = "empId=" + Quote(tab0.tab2.Tab0.tab1.Edit2.Text);
+	transaction("delete", "http://127.0.0.1:8080/miplatform/manpowerDelete.do", "", "", strParam, "fnCallback");
+	ds_manpower.DeleteRow(ds_manpower.row);
+	}
+}
+
+function tab0_tab2_Tab0_tab1_Button4_OnClick(obj)
+{
+	var strSvcid = "insert";
+	var strController = "http://127.0.0.1:8080/miplatform/manpowerInsert.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_manpower:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+}
+
+
+function tab0_tab2_Tab0_tab2_Button1_OnClick(obj)
+{
+	var strSvcid = "update";
+	var strController = "http://127.0.0.1:8080/miplatform/egovSampleUpdate1.do";
+	var strVoClass = "";
+	var strInputDs = "ds_input=ds_etcCost:U";
+	var strOutputDs = "";
+	var strParam = "pjCostId=" + Quote(tab0.tab2.Tab0.tab2.Edit4.Text)+
+	" costDays="+ Quote(tab0.tab2.Tab0.tab2.Calendar0.Text)+
+	" costCategory="+Quote(tab0.tab2.Tab0.tab2.Edit1.Text)+
+	" costPrice="+Quote(tab0.tab2.Tab0.tab2.Edit2.Text)+
+	" costEtc="+Quote(tab0.tab2.Tab0.tab2.Edit3.Text)+
+	" costBranch="+Quote(tab0.tab2.Tab0.tab2.Combo1.Text);
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+}
+
+function tab0_tab2_Tab0_tab2_Button2_OnClick(obj)
+{
+	ds_etcCost.AddRow();
+	ds_etcCost.SetColumn(ds_etcCost.row, " " , " ");
+}
+
+function tab0_tab2_Tab0_tab2_Button3_OnClick(obj)
+{
+
+		if(confirm("정말 삭제하시겠습니까?")){
+		strParam = "pjCostId=" + Quote(tab0.tab2.Tab0.tab2.Edit4.Text);
+		//alert(tab0.tab2.Tab0.tab2.Edit4.Text);
+		transaction("delete", "http://127.0.0.1:8080/miplatform/egovSampleDelete1.do", "", "", strParam, "fnCallback");
+		ds_etcCost.DeleteRow(ds_etcCost.row);
+		}
+}
+
+function tab0_tab2_Tab0_tab2_Button4_OnClick(obj)
+{
+	/**
+ * @ strSvcid : 서비스 아이디
+ * @ strController : 서버 컨트롤러 주소
+ * @ strVoClass : 입력 데이타 셋이 맵핑될 VOClass
+ * @ strInputDs : 입력 데이타 셋 정보
+ * @ strOutputDs : 출력 데이타 셋 정보
+ * @ strParam : 파라메터 정보
+ * @ strFnCallback : 콜백 함수 정보 -> 폼에 있어야 함
+ */
+ 
+ 
+ 
+    var strSvcid = "insert";
+	var strController = "http://127.0.0.1:8080/miplatform/egovSampleInsert1.do";
+	var strVoClass = "";
+	var strInputDs = "ds_input=ds_etcCost:U";
+	var strOutputDs = "";
+	var strParam = "pjId=" + Quote(tab0.tab2.Tab0.tab2.Combo0.Value)+
+	" pjCostId="+ Quote(tab0.tab2.Tab0.tab2.Edit4.Text)+
+	" costDays="+Quote(tab0.tab2.Tab0.tab2.Calendar0.Text)+
+	" costPrice="+Quote(tab0.tab2.Tab0.tab2.Edit2.Text)+
+	" costEtc="+Quote(tab0.tab2.Tab0.tab2.Edit3.Text)+
+	" costBranch="+Quote(tab0.tab2.Tab0.tab2.Combo1.Text)+
+	" costCategory="+Quote(tab0.tab2.Tab0.tab2.Edit1.Text);
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+			
+	/*var strSvcid = "insert";
+	var strController = "http://127.0.0.1:8080/miplatform/egovSampleInsert1.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_etcCost:U";
+	var strOutputDs = "";
+	var strParam = "";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback); */
+	
+}
+
+function tab0_tab3_Button0_OnClick(obj)
+{
+	strParam = "pjId=" + Quote(tab0.tab3.Combo0.Value);
+	transaction("list", "http://127.0.0.1:8080/miplatform/stsAnSis.do", "", "ds_STS_ANSIS=ds_output", strParam, "fnCallback");	
+
+}
+
+function tab0_tab2_Tab0_tab1_Button5_OnClick(obj)
+{
+	transaction("nmblist", "http://127.0.0.1:8080/miplatform/Manpowerlist.do", "", "ds_manpower=ds_output", "", "fnCallback");
+}
+
+function tab0_tab2_Tab0_tab2_Button5_OnClick(obj)
+{
+	transaction("list", "http://127.0.0.1:8080/miplatform/egovSampleList1.do", "", "ds_etcCost=ds_output", "", "fnCallback");
+}
+
+function tab0_tab2_Tab0_tab1_Button0_OnClick(obj)
+{
+	var ret = Dialog("DefApp::prt_nmbselect.xml", "", 616, 320, "Autosize=false resize=false");
+	if ( ret == "0" )
+	{
+		
+	}
+
+}
+
+function tab0_tab2_Tab0_tab1_Button6_OnClick(obj)
+{
+
+
+	strParam = "empNm=" + Quote(tab0.tab2.Tab0.tab1.Edit0.Text);
+	//alert(tab0.tab2.Tab0.tab1.Edit0.Text);
+	transaction("list", "http://127.0.0.1:8080/miplatform/selectNmb.do", "", "ds_manpower=ds_output", strParam, "fnCallback");
+}
+
+
+]]></Script>
+</Window>

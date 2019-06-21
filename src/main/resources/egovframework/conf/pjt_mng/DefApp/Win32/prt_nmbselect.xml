@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+	<Form Height="320" Id="form" Left="8" PidAttrib="7" Title="검색&#32;조회" TooltipFont="Default,0" Top="8" Ver="1.0" Width="856" WorkArea="true">
+		<Datasets>
+			<Dataset DataSetType="Dataset" Id="ds_pjtnm">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="pjNm" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_voInfo">
+				<Contents>
+					<colinfo id="voClass" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_SelectNmb">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="empId" size="256" summ="default" type="STRING"/>
+					<colinfo id="empNm" size="256" summ="default" type="STRING"/>
+					<colinfo id="manMonth" size="256" summ="default" type="STRING"/>
+					<colinfo id="startDate" size="256" summ="default" type="STRING"/>
+					<colinfo id="endDate" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+		</Datasets>
+		<Static BKColor="HIGHLIGHTTEXT" Height="309" Id="Static0" Left="-92" TabOrder="1" Top="4" Width="944"></Static>
+		<Static Align="Center" BKColor="INACTIVECAPTION" Height="22" Id="Static1" Left="48" TabOrder="2" Text="이름" Top="136" VAlign="Middle" Width="64"></Static>
+		<Edit Height="25" Id="Edit0" Left="132" TabOrder="3" Top="136" Width="143"></Edit>
+		<Static Align="Center" BKColor="INACTIVECAPTION" Height="22" Id="Static2" Left="48" TabOrder="4" Text="사원ID" Top="184" VAlign="Middle" Width="64"></Static>
+		<Edit Height="25" Id="Edit1" Left="132" TabOrder="5" Top="184" Width="143"></Edit>
+		<Static Align="Center" BKColor="INACTIVECAPTION" Height="24" Id="Static3" Left="48" TabOrder="6" Text="프로젝트명" Top="84" VAlign="Middle" Width="64"></Static>
+		<Static Align="Center" BKColor="black" Color="ghostwhite" Font="Tahoma,16,Bold" Height="39" Id="Static4" Left="48" TabOrder="7" Text="검색&#32;조회" Top="20" VAlign="Middle" Width="228"></Static>
+		<Button Height="35" Id="Button0" Left="112" OnClick="Button0_OnClick" TabOrder="8" Text="조회" Top="240" Width="90"></Button>
+		<Grid BindDataset="ds_SelectCost" BkColor2="default" BoldHead="true" Bottom="277" Enable="true" EndLineColor="default" Height="257" Id="Grid0" InputPanel="FALSE" Left="289" LineColor="default" Right="836" TabOrder="9" TabStop="true" Top="20" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="547">
+			<contents>
+				<format id="Default">
+					<columns>
+						<col width="69"/>
+						<col width="58"/>
+						<col width="80"/>
+						<col width="80"/>
+						<col width="108"/>
+						<col width="82"/>
+						<col width="65"/>
+					</columns>
+					<head>
+						<cell col="0" display="text" text="pjId"/>
+						<cell col="1" display="text" text="pjCostId"/>
+						<cell col="2" display="text" text="costDays"/>
+						<cell col="3" display="text" text="costCategory"/>
+						<cell col="4" display="text" text="costPrice"/>
+						<cell col="5" display="text" text="costEtc"/>
+						<cell col="6" display="text" text="costBranch"/>
+					</head>
+					<body>
+						<cell col="0" colid="pjId" display="text"/>
+						<cell col="1" colid="pjCostId" display="text"/>
+						<cell col="2" colid="costDays" display="text"/>
+						<cell col="3" colid="costCategory" display="text"/>
+						<cell col="4" colid="costPrice" display="text"/>
+						<cell col="5" colid="costEtc" display="text"/>
+						<cell col="6" colid="costBranch" display="text"/>
+					</body>
+				</format>
+			</contents>
+		</Grid>
+	</Form>
+	<Script><![CDATA[function fnCallback(svcid, errcd, errmsg)
+{
+	if ( svcid == "detail" )
+	{
+	} else if ( svcid == "insert" )
+	{
+		alert(errmsg);
+		
+	}
+}
+
+function fnSetVoInfo(objFrm, strVoClass)
+{
+	objFrm.ds_voInfo.clearData();
+	var row = objFrm.ds_voInfo.addrow();
+	objFrm.ds_voInfo.setcolumn(row, "voClass", strVoClass);
+}
+
+
+function fnCmTr(objFrm, svcid, strController, strVoClass, inputDs, outputDs, params, callbackFnc)
+{
+
+	fnSetVoInfo(objFrm, strVoClass);
+
+	//strParam = "voClass='egovframework.rte.sample.service.SampleVO'";
+	
+	transaction(svcid, 
+				"svc::" + strController, 
+				"ds_voInfo=ds_voInfo " + inputDs, 
+				outputDs,
+				params,
+				"fnCallback");
+}
+
+function Button0_OnClick(obj)
+{
+	strParam = "empNm=" + Quote(Edit0.Text);
+	alert(Edit0.Text);
+	transaction("list", "http://127.0.0.1:8080/miplatform/selectNmb.do", "", "ds_SelectNmb=ds_output", strParam, "fnCallback");
+
+}
+]]></Script>
+</Window>

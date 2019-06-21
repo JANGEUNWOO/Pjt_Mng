@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+	<Form Height="524" Id="cost_Mng" Left="8" PidAttrib="7" Title="프로젝트&#32;관리&#32;프로그램" TooltipFont="Default,0" Top="8" Ver="1.0" Width="800" WorkArea="true">
+		<Datasets>
+			<Dataset DataSetType="Dataset" Id="ds_etcCost">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="pjCostId" size="256" summ="default" type="STRING"/>
+					<colinfo id="costDays" size="256" summ="default" type="STRING"/>
+					<colinfo id="costCategory" size="256" summ="default" type="STRING"/>
+					<colinfo id="costPrice" size="256" summ="default" type="STRING"/>
+					<colinfo id="costEtc" size="256" summ="default" type="STRING"/>
+					<colinfo id="costBranch" size="256" summ="default" type="STRING"/>
+					<record>
+						<costBranch></costBranch>
+						<costCategory></costCategory>
+						<costDays></costDays>
+						<costEtc></costEtc>
+						<costPrice></costPrice>
+						<pjCostId></pjCostId>
+						<pjId></pjId>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_voInfo">
+				<Contents>
+					<colinfo id="voClass" size="256" summ="default" type="STRING"/>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_anlysis">
+				<Contents>
+					<colinfo id="항목" size="256" summ="default" type="STRING"/>
+					<colinfo id="금액" size="256" summ="default" type="STRING"/>
+					<record>
+						<금액></금액>
+						<항목>매출액</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>인건비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>재료비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>경비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>매출이익</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>본부공통비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>팀공통비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>영업이익</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>판공비</항목>
+					</record>
+					<record>
+						<금액></금액>
+						<항목>순이익</항목>
+					</record>
+				</Contents>
+			</Dataset>
+			<Dataset DataSetType="Dataset" Id="ds_manpower">
+				<Contents>
+					<colinfo id="pjId" size="256" summ="default" type="STRING"/>
+					<colinfo id="empId" size="256" summ="default" type="STRING"/>
+					<colinfo id="empNm" size="256" summ="default" type="STRING"/>
+					<colinfo id="manMonth" size="256" summ="default" type="STRING"/>
+					<colinfo id="startDate" size="256" summ="default" type="STRING"/>
+					<colinfo id="endDate" size="256" summ="default" type="STRING"/>
+					<record>
+						<empId></empId>
+						<empNm></empNm>
+						<endDate></endDate>
+						<manMonth></manMonth>
+						<pjId></pjId>
+						<startDate></startDate>
+					</record>
+				</Contents>
+			</Dataset>
+		</Datasets>
+		<Tab Height="520" Id="MainTab" Left="4" TabIndex="1" TabOrder="1" Top="4" Width="792">
+			<Contents>
+				<TabPage BorderColor="black" Height="495" Id="tab1" Left="2" TabOrder="4" Text="프로젝트&#32;관리" Top="23" Width="788">
+					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
+					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="221" TabOrder="2" Text="프로젝트&#32;관리" Top="23" VAlign="Middle" Width="330"></Static>
+					<Grid BkColor2="default" BoldHead="true" Bottom="459" Enable="true" EndLineColor="default" Height="362" Id="Grid0" InputPanel="FALSE" Left="6" LineColor="default" Right="780" TabOrder="3" TabStop="true" Top="97" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="774">
+						<contents>
+							<format id="Default">
+								<columns>
+									<col width="74"/>
+									<col width="126"/>
+									<col width="53"/>
+									<col width="133"/>
+									<col width="110"/>
+									<col width="121"/>
+									<col width="99"/>
+									<col width="54"/>
+								</columns>
+								<head>
+									<cell col="0" combodisplayrowcnt="6" display="text" edit="normal" font="Tahoma,11" text="ID"/>
+									<cell col="1" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="프로젝트명"/>
+									<cell col="2" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="PM"/>
+									<cell col="3" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="계획일정"/>
+									<cell col="4" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="실제일정"/>
+									<cell col="5" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="계약금액"/>
+									<cell col="6" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="계약처"/>
+									<cell col="7" combodisplayrowcnt="6" display="text" font="Tahoma,11" text="상태"/>
+								</head>
+								<body>
+									<cell col="0" display="text"/>
+									<cell col="1" display="text"/>
+									<cell col="2" display="text"/>
+									<cell col="3" display="text"/>
+									<cell col="4" display="text"/>
+									<cell col="5" display="text"/>
+									<cell col="6" display="text"/>
+									<cell col="7" display="text"/>
+								</body>
+							</format>
+						</contents>
+					</Grid>
+					<Button Font="Tahoma,12" Height="30" Id="Button0" Left="702" TabOrder="4" Text="삭제" Top="469" Width="74"></Button>
+					<Button Font="Tahoma,12" Height="30" Id="Button1" Left="612" TabOrder="5" Text="수정" Top="469" Width="74"></Button>
+					<Button Font="Tahoma,12" Height="30" Id="Button2" Left="522" TabOrder="6" Text="입력" Top="469" Width="74"></Button>
+				</TabPage>
+				<TabPage BorderColor="black" Height="495" Id="tab2" Left="2" TabOrder="4" Text="원가관리" Top="23" Width="788">
+					<Tab Height="420" Id="SubTab" Left="-2" TabOrder="1" Top="73" Width="792">
+						<Contents>
+							<TabPage BorderColor="black" Height="395" Id="tab1" Left="2" TabOrder="1" Text="노무비" Top="23" Width="788">
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static1" Left="50" TabOrder="1" Text="이름" Top="65" VAlign="Middle" Width="92"></Static>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static2" Left="50" TabOrder="2" Text="시작일" Top="109" VAlign="Middle" Width="92"></Static>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static3" Left="50" TabOrder="3" Text="종료일" Top="153" VAlign="Middle" Width="92"></Static>
+								<Edit BindDataset="ds_manpower" Column="empNm" Height="24" Id="ed_Nmb_nm" Left="162" TabOrder="4" Top="65" Width="119"></Edit>
+								<Grid BindDataset="ds_manpower" BkColor2="default" BoldHead="true" Bottom="344" Enable="true" EndLineColor="default" Height="144" Id="grid0" InputPanel="FALSE" Left="47" LineColor="default" Right="731" TabOrder="5" TabStop="true" Top="200" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="684">
+									<contents>
+										<columns>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+										</columns>
+										<head>
+											<cell col="0" display="text" text="pjId"/>
+											<cell col="1" display="text" text="empId"/>
+											<cell col="2" display="text" text="empNm"/>
+											<cell col="3" display="text" text="manMonth"/>
+											<cell col="4" display="text" text="startDate"/>
+											<cell col="5" display="text" text="endDate"/>
+										</head>
+										<body>
+											<cell col="0" colid="pjId" display="text"/>
+											<cell col="1" colid="empId" display="text"/>
+											<cell col="2" colid="empNm" display="text"/>
+											<cell col="3" colid="manMonth" display="text"/>
+											<cell col="4" colid="startDate" display="text"/>
+											<cell col="5" colid="endDate" display="text"/>
+										</body>
+									</contents>
+								</Grid>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static4" Left="310" TabOrder="6" Text="프로젝트id" Top="105" VAlign="Middle" Width="92"></Static>
+								<Button Height="28" Id="btnNmbAdd" Left="490" OnClick="Tab0_tab2_Tab0_tab1_Button0_OnClick" TabOrder="7" Text="추가" Top="165" Width="85"></Button>
+								<Static Align="Center" BKColor="aqua" Height="19" Id="Static5" Left="329" TabOrder="8" Text="노무비" VAlign="Middle" Width="105"></Static>
+								<Button Height="28" Id="btnNmbSearch" Left="310" OnClick="MainTab_tab2_SubTab_tab1_btnNmbSearch_OnClick" TabOrder="9" Text="조회" Top="165" Width="88"></Button>
+								<Button Height="28" Id="btnNmbSave" Left="670" OnClick="MainTab_tab2_SubTab_tab1_btnNmbSave_OnClick" TabOrder="10" Text="저장" Top="165" Width="88"></Button>
+								<Combo Height="21" Id="Combo0" Left="51" TabOrder="11" Text="프로젝트를&#32;선택하세요" Top="28" Width="209"></Combo>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static0" Left="310" TabOrder="12" Text="인건비" Top="65" VAlign="Middle" Width="92"></Static>
+								<Edit BindDataset="ds_manpower" Column="manMonth" Height="24" Id="ed_Nmb_cost" Left="421" TabOrder="13" Top="64" Width="126"></Edit>
+								<Edit BindDataset="ds_manpower" Column="pjId" Height="20" Id="ed_Nmb_Id" Left="422" TabOrder="14" Top="106" Width="123"></Edit>
+								<Edit BindDataset="ds_manpower" Column="empId" Height="19" Id="ed_Nmb_EmpId" Left="422" TabOrder="15" Top="135" Width="125"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static6" Left="310" TabOrder="16" Text="사원ID" Top="133" VAlign="Middle" Width="92"></Static>
+								<Button Height="28" Id="btnNmbFix" Left="405" OnClick="MainTab_tab2_SubTab_tab1_btnNmbFix_OnClick" TabOrder="17" Text="수정" Top="166" Width="81"></Button>
+								<Button Height="28" Id="btn_nmb_delete" Left="578" OnClick="MainTab_tab2_SubTab_tab1_btn_nmb_delete_OnClick" TabOrder="18" Text="삭제" Top="165" Width="88"></Button>
+								<Calendar BindDataset="ds_manpower" Column="endDate" Height="25" Id="ed_Nmb_endDate" Left="162" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="19" Top="152" Width="117"></Calendar>
+							</TabPage>
+							<TabPage BorderColor="black" Height="395" Id="tab3" Left="2" TabOrder="1" Text="재료비/경비" Top="23" Width="788">
+								<Edit BindDataset="ds_etcCost" Column="costCategory" Height="24" Id="Edit12" Left="170" TabOrder="4" Top="81" Width="119"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static1" Left="58" TabOrder="1" Text="항목" Top="81" VAlign="Middle" Width="92"></Static>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static2" Left="58" TabOrder="2" Text="금액" Top="121" VAlign="Middle" Width="92"></Static>
+								<Edit BindDataset="ds_etcCost" Column="costPrice" Height="24" Id="Edit13" Left="170" TabOrder="5" Top="117" Width="119"></Edit>
+								<Edit BindDataset="ds_etcCost" Column="costEtc" Height="40" Id="Edit14" Left="170" TabOrder="6" Top="161" Width="184"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static3" Left="58" TabOrder="3" Text="비고" Top="161" VAlign="Middle" Width="92"></Static>
+								<Button Height="28" Id="bt_kb_add" Left="498" OnClick="Tab0_tab2_Tab0_tab3_bt_kb_add_OnClick" TabOrder="7" Text="추가" Top="177" Width="85"></Button>
+								<Button Height="27" Id="bt_kb_del" Left="590" OnClick="Tab0_tab2_Tab0_tab3_bt_kb_del_OnClick" TabOrder="8" Text="삭제" Top="177" Width="80"></Button>
+								<Static Align="Center" BKColor="aqua" Height="19" Id="Static5" Left="338" TabOrder="9" Text="재료비/경비" Top="8" VAlign="Middle" Width="105"></Static>
+								<Button Height="27" Id="bt_kb_save" Left="678" OnClick="Tab0_tab2_Tab0_tab3_bt_kb_save_OnClick" TabOrder="10" Text="저장" Top="177" Width="80"></Button>
+								<Button Height="28" Id="Button0" Left="402" OnClick="Tab0_tab2_Tab0_tab3_Button0_OnClick" TabOrder="11" Text="조회" Top="177" Width="88"></Button>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static4" Left="58" TabOrder="12" Text="일자" Top="41" VAlign="Middle" Width="92"></Static>
+								<Edit BindDataset="ds_etcCost" Column="costDays" Height="24" Id="Edit15" Left="170" TabOrder="13" Top="41" Width="119"></Edit>
+								<Static Align="Center" BKColor="MENU" Height="28" Id="Static0" Left="410" TabOrder="14" Text="구분" Top="77" VAlign="Middle" Width="92"></Static>
+								<Grid BindDataset="ds_etcCost" BkColor2="default" BoldHead="true" Bottom="368" Enable="true" EndLineColor="default" Height="122" Id="Grid0" InputPanel="FALSE" Left="63" LineColor="default" Right="728" TabOrder="15" TabStop="true" Top="246" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="665">
+									<contents>
+										<columns>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+											<col width="80"/>
+										</columns>
+										<head>
+											<cell col="0" display="text" text="pjId"/>
+											<cell col="1" display="text" text="pjCostId"/>
+											<cell col="2" display="text" text="costDays"/>
+											<cell col="3" display="text" text="costCategory"/>
+											<cell col="4" display="text" text="costPrice"/>
+											<cell col="5" display="text" text="costEtc"/>
+											<cell col="6" display="text" text="costBranch"/>
+										</head>
+										<body>
+											<cell col="0" colid="pjId" display="text"/>
+											<cell col="1" colid="pjCostId" display="text"/>
+											<cell col="2" colid="costDays" display="text"/>
+											<cell col="3" colid="costCategory" display="text"/>
+											<cell col="4" colid="costPrice" display="text"/>
+											<cell col="5" colid="costEtc" display="text"/>
+											<cell col="6" colid="costBranch" display="text"/>
+										</body>
+									</contents>
+								</Grid>
+								<Static Align="Center" BKColor="MENU" Height="22" Id="Static6" Left="58" TabOrder="16" Text="ID" Top="5" VAlign="Middle" Width="92"></Static>
+								<Edit BindDataset="ds_etcCost" Column="pjId" Height="23" Id="ed_costId" Left="170" TabOrder="17" Top="9" Width="119"></Edit>
+								<Edit BindDataset="ds_etcCost" Column="costBranch" Height="32" Id="Edit1" Left="518" TabOrder="18" Top="81" Width="154"></Edit>
+								<Static Height="23" Id="Static7" Left="457" TabOrder="19" Text="costID" Top="12" Width="64"></Static>
+								<Edit BindDataset="ds_etcCost" Column="pjCostId" Height="30" Id="Edit2" Left="538" TabOrder="20" Top="5" Width="116"></Edit>
+								<Button Height="27" Id="btn_update" Left="402" OnClick="MainTab_tab2_SubTab_tab3_btn_update_OnClick" TabOrder="21" Text="수정" Top="137" Width="89"></Button>
+							</TabPage>
+						</Contents>
+					</Tab>
+					<Static Align="Center" Font="Tahoma,22" Height="33" Id="Static0" Left="307" TabOrder="2" Text="원가관리" Top="16" VAlign="Middle" Width="158"></Static>
+					<Calendar BindDataset="ds_manpower" Column="startDate" Height="27" Id="ed_Nmb_startDate" Left="162" SaturdayTextColor="blue" SundayTextColor="red" TabOrder="3" Top="201" Width="119"></Calendar>
+				</TabPage>
+				<TabPage BorderColor="black" Height="495" Id="tab3" Left="2" TabOrder="4" Text="현황분석" Top="23" Width="788">
+					<Grid BindDataset="ds_anlysis" BKColor="WINDOW" BkColor2="BTNHIGHLIGHT" BkSelColor="ACTIVEBORDER" BoldHead="true" Bottom="470" Enable="true" EndLineColor="default" Height="330" Id="Grid1" InputPanel="FALSE" Left="100" LineColor="default" Right="683" RowHeight="30" TabOrder="1" TabStop="true" Top="140" UseDBuff="true" UsePopupMenu="true" UseSelColor="true" Visible="true" VLineColor="default" WheelScrollRow="1" Width="583">
+						<contents>
+							<format id="Default">
+								<columns>
+									<col width="223"/>
+									<col width="353"/>
+								</columns>
+								<head>
+									<cell col="0" display="text" text="항목"/>
+									<cell col="1" display="text" text="금액"/>
+								</head>
+								<body>
+									<cell align="center" bkcolor2="WINDOW" col="0" colid="항목" display="text"/>
+									<cell align="center" col="1" colid="금액" display="text"/>
+								</body>
+							</format>
+						</contents>
+					</Grid>
+					<Combo Height="29" Id="Combo0" Left="100" TabOrder="2" Text="프로젝트를&#32;선택하세요." Top="90" Width="408"></Combo>
+					<Static Align="Center" Font="Tahoma,18" Height="43" Id="Static0" Left="295" TabOrder="3" Text="현황분석" Top="10" VAlign="Middle" Width="219"></Static>
+				</TabPage>
+				<TabPage BorderColor="black" Height="495" Id="tab4" Left="2" TabOrder="4" Text="매출관리" Top="23" Width="788">
+					<Static BKColor="lightblue" Height="91" Id="topBackground01" Left="-2" TabOrder="1" Top="1" Width="789"></Static>
+					<Static Align="Center" Font="Tahoma,22" Height="44" Id="prj_mng_title" Left="225" TabOrder="2" Text="매출관리" Top="27" VAlign="Middle" Width="330"></Static>
+				</TabPage>
+			</Contents>
+		</Tab>
+	</Form>
+	<Script><![CDATA[//#include "lib::common.js";
+
+function fnCallback(svcid, errcd, errmsg)
+{
+	if ( svcid == "detail" )
+	{
+	} else if ( svcid == "insert" )
+	{
+		alert(errmsg);
+		
+	}
+}
+
+function fnSetVoInfo(objFrm, strVoClass)
+{
+	objFrm.ds_voInfo.clearData();
+	var row = objFrm.ds_voInfo.addrow();
+	objFrm.ds_voInfo.setcolumn(row, "voClass", strVoClass);
+}
+
+
+function fnCmTr(objFrm, svcid, strController, strVoClass, inputDs, outputDs, params, callbackFnc)
+{
+
+	fnSetVoInfo(objFrm, strVoClass);
+
+	//strParam = "voClass='egovframework.rte.sample.service.SampleVO'";
+	
+	transaction(svcid, 
+				"svc::" + strController, 
+				"ds_voInfo=ds_voInfo " + inputDs, 
+				outputDs,
+				params,
+				"fnCallback");
+}
+
+var strParam;
+function form_OnLoadCompleted(obj){
+
+}
+
+function Tab0_tab2_Tab0_tab3_bt_kb_save_OnClick(obj)
+{
+/**
+ * @ strSvcid : 서비스 아이디
+ * @ strController : 서버 컨트롤러 주소
+ * @ strVoClass : 입력 데이타 셋이 맵핑될 VOClass
+ * @ strInputDs : 입력 데이타 셋 정보
+ * @ strOutputDs : 출력 데이타 셋 정보
+ * @ strParam : 파라메터 정보
+ * @ strFnCallback : 콜백 함수 정보 -> 폼에 있어야 함
+ */
+
+	var strSvcid = "insert";
+	var strController = "http://127.0.0.1:8080/miplatform/egovSampleInsert1.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_etcCost:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+	return;
+	
+	fnSetVoInfo(this, "egovframework.example.sample.service.SampleVO");
+
+	
+	transaction("insert", 
+				"svc::egovSampleInsert1.do", 
+				"ds_input=ds_etcCost:U", 
+				"", 
+				"", 
+				"fnCallback");		
+	//strParam = "voClass='egovframework.example.sample.service.SampleVO'";
+	//transaction("insert", "http://127.0.0.1:8080/miplatform/egovSampleInsert1.do", "ds_input=ds_etcCost:U", "", strParam, "fnCallback");
+}
+
+
+function Tab0_tab2_Tab0_tab3_bt_kb_add_OnClick(obj)
+{
+	ds_etcCost.AddRow();
+	ds_etcCost.SetColumn(ds_etcCost.row, " " , " ");
+}
+
+function Tab0_tab2_Tab0_tab3_Button0_OnClick(obj)
+{
+	transaction("list", "http://127.0.0.1:8080/miplatform/egovSampleList1.do", "", "ds_etcCost=ds_output", "", "fnCallback");
+}
+
+function Tab0_tab2_Tab0_tab3_bt_kb_del_OnClick(obj)
+{
+		if(confirm("정말 삭제하시겠습니까?")){
+		strParam = "selectedId=" + Quote(MainTab.tab2.SubTab.tab3.ed_costId.Text);
+		transaction("delete", "http://127.0.0.1:8080/miplatform/egovSampleDelete1.do", "", "", strParam, "fnCallback");
+		ds_etcCost.DeleteRow(ds_etcCost.row);
+		}	
+}
+
+
+function MainTab_tab2_SubTab_tab3_btn_update_OnClick(obj)
+{
+	var strSvcid = "update";
+	var strController = "http://127.0.0.1:8080/miplatform/egovSampleUpdate1.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_etcCost:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+
+	return;
+	
+	fnSetVoInfo(this, "egovframework.example.sample.service.SampleVO");
+
+	
+	transaction("update", 
+				"svc::egovSampleUpdate1.do", 
+				"ds_input=ds_etcCost:U", 
+				"", 
+				"", 
+				"fnCallback");
+}
+
+
+
+function Tab0_tab2_Tab0_tab1_Button0_OnClick(obj)
+{
+	
+	ds_manpower.AddRow();
+	ds_manpower.SetColumn(ds_manpower.row," "," ");
+}
+
+
+
+function MainTab_tab2_SubTab_tab1_btnNmbSearch_OnClick(obj)
+{
+	//인건비
+	transaction("nmblist", "http://127.0.0.1:8080/miplatform/Manpowerlist.do", "", "ds_manpower=ds_output", "", "fnCallback");
+}
+
+
+function MainTab_tab2_SubTab_tab1_btn_nmb_delete_OnClick(obj)
+{
+	alert(MainTab.tab2.SubTab.tab1.ed_Nmb_EmpId.Text);
+	if(confirm("정말 삭제하시겠습니까?")){
+	strParam = "selectedId=" + Quote(MainTab.tab2.SubTab.tab1.ed_Nmb_EmpId.Text);
+	transaction("delete", "http://127.0.0.1:8080/miplatform/manpowerDelete.do", "", "", strParam, "fnCallback");
+	ds_manpower.DeleteRow(ds_manpower.row);
+	}
+}
+
+function MainTab_tab2_SubTab_tab1_btnNmbFix_OnClick(obj)
+{
+
+	var strSvcid = "update";
+	var strController = "http://127.0.0.1:8080/miplatform/manpowerUpdate.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_manpower:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+
+	return;
+	
+	fnSetVoInfo(this, "egovframework.example.sample.service.SampleVO");
+
+	
+	transaction("update", 
+				"svc::manpowerUpdate.do", 
+				"ds_input=ds_manpower:U", 
+				"", 
+				"", 
+				"fnCallback");
+}
+
+function MainTab_tab2_SubTab_tab1_btnNmbSave_OnClick(obj)
+{
+   	var strSvcid = "insert";
+	var strController = "http://127.0.0.1:8080/miplatform/manpowerInsert.do";
+	var strVoClass = "egovframework.example.sample.service.SampleVO";
+	var strInputDs = "ds_input=ds_manpower:U";
+	var strOutputDs = "";
+	var strParam = "";
+	var strFnCallback = "fnCallback";
+	
+	fnCmTr(this, 
+			strSvcid, 
+			strController, 
+			strVoClass, 
+			strInputDs, 
+			strOutputDs, 
+			strParam, 
+			strFnCallback);
+	return;
+	
+	fnSetVoInfo(this, "egovframework.example.sample.service.SampleVO");
+
+	
+	transaction("insert", 
+				"svc::manpowerInsert.do", 
+				"ds_input=ds_manpower:U", 
+				"", 
+				"", 
+				"fnCallback");		
+}
+
+]]></Script>
+</Window>
