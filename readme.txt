@@ -1,13 +1,10 @@
 Project name : Project Management Program
-
-Tool
-
-Miplatform
-oracle/plsql -Version 12.0.3.1821 
-Egov(Java Spring) -Java jdk Version 1.8
-
 Team : Kim ji hye, Jang eun woo (Kim & Jang)
 
+<Tool>
+Client/View : Miplatform
+DataBase : Oracle/plsql -Version 12.0.3.1821 
+Basic Language : Egov(Java Spring) -Java jdk Version 1.8
 
 <ER Diagram , sql>
 Java Resources > src/main/resources > db > 프로젝트관리프로그램.sql
